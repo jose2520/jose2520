@@ -1,4 +1,4 @@
-<img src="jose-banner.svg" width="100%" alt="Jose banner"/>
+<img src="jose-tech-banner.svg" width="100%" alt="Jose banner"/>
 
 <div align="left">
   <h1>Jose (jose2520)</h1>
