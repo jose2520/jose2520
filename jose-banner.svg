@@ -1,70 +1,489 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240" role="img" aria-label="Jose - Developer" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozNmVjNjJhMC00NTgzLTQyOWYtYWFjNC1lZDJiNDczODI2NGIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaLsT0swf8lOTkSQ33xKhOmkAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo2YzdjY2EyMi0zMWY0LTQ0OGEtYTJmYS1lZjU2ZWY0NmZiMTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoHm5qiyqJT5jpwUmzBYxs9AAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggu2tJ3wNZFCtNxhdYm/Oafxla5flgDMFyknsIJyskgQCkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaMvueEjYtX50HMqCjZb7FaoAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAyB6z+uO3t+5lOpbif3/0UX4CiPKvpMoCZqLWUbWeHq2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBi/Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjM2ZWM2MmEwLTQ1ODMtNDI5Zi1hYWM0LWVkMmI0NzM4MjY0Yi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmU1MDJlOGQxLTEwZDMtNDcyNC05Y2IwLTMxMmQyOGVkNzc4N3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCC7a0nfA1kUK03GF1ib85p/GVrl+WAMwXKSewgnKySBAKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggjyMKixtxLNMlTv5u3IuA3je+PjvB6nsgarkOtIuJbc2iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggbFEM9UGmct24tIdq6GwB7hpD3Rz14Hlo43aNDnOJJ110Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQG+/aVjaTaJhywzbYwKrili5d+BNtYK0eBc9aaEEg9+cgGnlrFm5ntVz8WC08b8vCyad8UeE8A6WPVbdytesmmc=</c2pa:manifest></metadata>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 450" width="100%" height="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Portafolio de Jose Del Carmen Díaz Díaz (jose2520) — Full-Stack, Mobile &amp; UI/UX</title>
+  <desc id="desc">Interfaz ejecutiva estilo Liquid Glass en rojo carmesí, negro obsidiana y blanco puro con consola de código en vivo, tarjetas de arquitectura y dock de tecnologías.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="50%" stop-color="#161b3a">
-        <animate attributeName="stop-color" values="#161b3a;#2a1550;#10304a;#161b3a" dur="10s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#0d1117"/>
+    <!-- ===================================================== -->
+    <!-- 1. LUXURY LIQUID GLASS GRADIENTS (RED / BLACK / WHITE)-->
+    <!-- ===================================================== -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050609"/>
+      <stop offset="52%" stop-color="#0E080B"/>
+      <stop offset="100%" stop-color="#040507"/>
     </linearGradient>
-    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#58a6ff"/>
-      <stop offset="50%" stop-color="#bc8cff"/>
-      <stop offset="100%" stop-color="#ff7bc6"/>
-      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0;-1 0" dur="6s" repeatCount="indefinite"/>
+
+    <!-- Main Frosted Liquid Glass Panel Fill -->
+    <linearGradient id="panelGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2029" stop-opacity="0.92"/>
+      <stop offset="28%" stop-color="#0D0E14" stop-opacity="0.96"/>
+      <stop offset="72%" stop-color="#090A0F" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#210910" stop-opacity="0.94"/>
     </linearGradient>
-    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#ff7bc6" stop-opacity="0"/>
+
+    <!-- Specialty Card Liquid Glass Fill -->
+    <linearGradient id="cardGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.11"/>
+      <stop offset="30%" stop-color="#14151C" stop-opacity="0.92"/>
+      <stop offset="78%" stop-color="#0A0B10" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#2A0A12" stop-opacity="0.90"/>
     </linearGradient>
-    <clipPath id="typing">
-      <rect x="250" y="130" height="40" width="0">
-        <animate attributeName="width" values="0;400;400;0" keyTimes="0;0.45;0.85;1" dur="7s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+
+    <!-- Specular Outer Rim for Main Panels (White Top-Left -> Crimson Bottom-Right) -->
+    <linearGradient id="panelRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="22%" stop-color="#ff3349" stop-opacity="0.38"/>
+      <stop offset="65%" stop-color="#4A1822" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff263d" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- Specular Rim for Specialty Cards -->
+    <linearGradient id="cardRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.62"/>
+      <stop offset="28%" stop-color="#ff3349" stop-opacity="0.35"/>
+      <stop offset="75%" stop-color="#5a1c27" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff263d" stop-opacity="0.80"/>
+    </linearGradient>
+
+    <!-- Icon Squircle Liquid Crimson Fill -->
+    <linearGradient id="iconBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A101D"/>
+      <stop offset="55%" stop-color="#24080E"/>
+      <stop offset="100%" stop-color="#140408"/>
+    </linearGradient>
+
+    <!-- Top Curved Glass Gloss Highlight -->
+    <linearGradient id="topGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Hero Last Name ("Díaz") Animated Crimson-White Gradient -->
+    <linearGradient id="redText" x1="0%" y1="0%" x2="200%" y2="0%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF858D"/>
+      <stop offset="30%" stop-color="#FF1E38"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#FF1635"/>
+      <stop offset="100%" stop-color="#FF858D"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-400 0" to="400 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Diagonal Glass Reflection Sweep -->
+    <linearGradient id="sweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.065"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Ambient Crimson & White Glows -->
+    <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff1838" stop-opacity="0.40"/>
+      <stop offset="55%" stop-color="#9e0018" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ff1838" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowWhite" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="haloGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="12"/>
     </filter>
+
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Subtle Dot Matrix Pattern -->
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#8f929d" opacity="0.22"/>
+    </pattern>
+
+    <!-- Clips -->
+    <clipPath id="leftClip">
+      <rect x="34" y="24" width="690" height="402" rx="34"/>
+    </clipPath>
+    <clipPath id="rightClip">
+      <rect x="746" y="24" width="820" height="402" rx="34"/>
+    </clipPath>
+
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .mono { font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, monospace; }
+      .muted { fill: #9498A6; }
+      .white { fill: #F8FAFC; }
+      .red { fill: #FF3349; }
+      .pulse { animation: pulse 3.4s ease-in-out infinite; }
+      .float { animation: float 5.2s ease-in-out infinite; }
+      .blink { animation: blink 1.05s steps(2, end) infinite; }
+      .sweepLeft { animation: sweepLeft 7s ease-in-out infinite; }
+      .sweepRight { animation: sweepRight 8.5s ease-in-out -2s infinite; }
+      .card1 { animation: cardFloat 5.6s ease-in-out infinite; }
+      .card2 { animation: cardFloat 5.6s ease-in-out -1.8s infinite; }
+      .card3 { animation: cardFloat 5.6s ease-in-out -3.6s infinite; }
+      .spinSlow { transform-origin: 800px 396px; animation: spin 14s linear infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes blink { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+      @keyframes sweepLeft { 0% { transform: translateX(-320px); opacity: 0; } 20% { opacity: 0.9; } 75% { opacity: 0.5; } 100% { transform: translateX(860px); opacity: 0; } }
+      @keyframes sweepRight { 0% { transform: translateX(-360px); opacity: 0; } 20% { opacity: 0.85; } 75% { opacity: 0.45; } 100% { transform: translateX(980px); opacity: 0; } }
+      @keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .pulse, .float, .blink, .sweepLeft, .sweepRight, .card1, .card2, .card3, .spinSlow { animation: none; }
+      }
+    </style>
   </defs>
 
-  <rect width="900" height="240" rx="16" fill="url(#bg)"/>
+  <!-- ===================================================== -->
+  <!-- 1. DEEP OBSIDIAN CANVAS & AMBIENT NEON ATMOSPHERE     -->
+  <!-- ===================================================== -->
+  <rect width="1600" height="450" rx="24" fill="url(#bg)"/>
 
-  <!-- floating particles -->
-  <g fill="#bc8cff" opacity="0.5">
-    <circle cx="80" cy="60" r="3"><animate attributeName="cy" values="60;40;60" dur="5s" repeatCount="indefinite"/></circle>
-    <circle cx="180" cy="190" r="2"><animate attributeName="cy" values="190;165;190" dur="6s" repeatCount="indefinite"/></circle>
-    <circle cx="420" cy="40" r="2.5"><animate attributeName="cy" values="40;60;40" dur="7s" repeatCount="indefinite"/></circle>
-    <circle cx="700" cy="55" r="3"><animate attributeName="cy" values="55;35;55" dur="4.5s" repeatCount="indefinite"/></circle>
-    <circle cx="820" cy="170" r="2"><animate attributeName="cy" values="170;195;170" dur="5.5s" repeatCount="indefinite"/></circle>
-    <circle cx="610" cy="200" r="2.5"><animate attributeName="cy" values="200;178;200" dur="6.5s" repeatCount="indefinite"/></circle>
+  <!-- Breathing Crimson & White Backlights -->
+  <ellipse cx="1060" cy="145" rx="420" ry="240" fill="url(#glowRed)" opacity="0.7">
+    <animate attributeName="cx" values="1060;1110;1060" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="220" cy="340" rx="340" ry="190" fill="url(#glowRed)" opacity="0.45">
+    <animate attributeName="cx" values="220;270;220" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="740" cy="70" rx="290" ry="120" fill="url(#glowWhite)"/>
+
+  <!-- Precision Architectural Grid Lines -->
+  <g opacity="0.18" stroke="#a72a39" stroke-width="1" fill="none">
+    <path d="M 0 80 H 1600 M 0 370 H 1600"/>
+    <path d="M 735 0 V 450"/>
   </g>
 
-  <!-- code brackets -->
-  <g font-family="'Courier New', monospace" font-size="90" fill="#58a6ff" opacity="0.18">
-    <text x="60" y="150">&lt;</text>
-    <text x="760" y="150">/&gt;</text>
+  <!-- ===================================================== -->
+  <!-- 2. OUTER NEON HALOS & LIQUID GLASS CONTAINERS         -->
+  <!-- ===================================================== -->
+  <!-- Left Panel Crimson Halo -->
+  <rect x="31" y="21" width="696" height="408" rx="37" fill="none" stroke="#ff263d" stroke-width="9" opacity="0.24" filter="url(#haloGlow)" class="pulse"/>
+  <!-- Right Panel Crimson Halo -->
+  <rect x="743" y="21" width="826" height="408" rx="37" fill="none" stroke="#ff263d" stroke-width="7" opacity="0.15" filter="url(#haloGlow)"/>
+
+  <!-- Left Container Base -->
+  <rect x="34" y="24" width="690" height="402" rx="34" fill="url(#panelGlass)" stroke="url(#panelRim)" stroke-width="1.5" filter="url(#dropShadow)"/>
+  <rect x="36" y="26" width="686" height="398" rx="32" fill="none" stroke="#FFFFFF" stroke-width="0.6" stroke-opacity="0.16"/>
+
+  <!-- Right Container Base -->
+  <rect x="746" y="24" width="820" height="402" rx="34" fill="url(#panelGlass)" stroke="url(#panelRim)" stroke-width="1.5" filter="url(#dropShadow)"/>
+  <rect x="748" y="26" width="816" height="398" rx="32" fill="none" stroke="#FFFFFF" stroke-width="0.6" stroke-opacity="0.16"/>
+  <rect x="746" y="24" width="820" height="402" rx="34" fill="url(#dots)" opacity="0.2"/>
+
+  <!-- ===================================================== -->
+  <!-- 3. LEFT CONTAINER: LIQUID GLASS CODE STUDIO           -->
+  <!-- ===================================================== -->
+  <g clip-path="url(#leftClip)">
+    <!-- Top Curved Glass Specular Highlight -->
+    <path d="M 34 24 H 724 V 78 Q 379 108 34 72 Z" fill="url(#topGloss)"/>
+
+    <!-- Header Divider -->
+    <path d="M 34 82 H 724" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1"/>
+
+    <!-- Window Controls (Red, White, Smoked Silver — Matching Palette!) -->
+    <circle cx="64" cy="53" r="8.5" fill="#FF2A42"/>
+    <circle cx="92" cy="53" r="8.5" fill="#F4F4F6"/>
+    <circle cx="120" cy="53" r="8.5" fill="#3F3F46"/>
+
+    <!-- Active File Pill Tab: jose-diaz.ts -->
+    <rect x="154" y="33" width="218" height="40" rx="16" fill="#181922" fill-opacity="0.9" stroke="url(#cardRim)" stroke-width="1.1"/>
+    <text x="176" y="59" class="white mono" font-size="15.5" font-weight="700">&lt;/&gt; jose-diaz.ts</text>
+    <circle cx="350" cy="53" r="4.5" fill="#FF3349" class="pulse"/>
+
+    <!-- Secondary Pill Tab: ui-system.fig -->
+    <rect x="382" y="36" width="144" height="34" rx="14" fill="#0D0E14" fill-opacity="0.7" stroke="#FFFFFF" stroke-width="0.6" stroke-opacity="0.14"/>
+    <circle cx="402" cy="53" r="3.8" fill="#FF6B79"/>
+    <text x="414" y="58" class="muted mono" font-size="13.5" font-weight="500">ui-kit.fig</text>
+
+    <!-- Encoding Indicator -->
+    <text x="696" y="58" text-anchor="end" class="muted mono" font-size="13" font-weight="600">TS · UTF-8</text>
+
+    <!-- Recessed Inner Code Editor Box -->
+    <rect x="56" y="98" width="646" height="264" rx="20" fill="#06070B" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.10"/>
+    <rect x="56" y="98" width="646" height="264" rx="20" fill="url(#dots)" opacity="0.25"/>
+    <!-- Inner Top Specular Line -->
+    <line x1="80" y1="98.5" x2="420" y2="98.5" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.28"/>
+
+    <!-- Animated Active-Line Scanner Highlight -->
+    <rect x="122" y="287" width="562" height="30" rx="7" fill="#FF2639" fill-opacity="0.11">
+      <animate attributeName="y" values="135;169;203;237;271;287;287" keyTimes="0;0.14;0.28;0.42;0.56;0.70;1" calcMode="discrete" dur="9s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="122" y="287" width="3.5" height="30" rx="1.75" fill="#FF3349" class="pulse">
+      <animate attributeName="y" values="135;169;203;237;271;287;287" keyTimes="0;0.14;0.28;0.42;0.56;0.70;1" calcMode="discrete" dur="9s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Subtle Decorative Watermark Inside Editor -->
+    <text x="676" y="245" text-anchor="end" class="mono" font-size="78" font-weight="800" fill="#FFFFFF" opacity="0.025">{ }</text>
+
+    <!-- Code Content (7 Complete Lines including Closing Brace & Correct RIWI!) -->
+    <g class="mono" font-size="17">
+      <!-- Line Numbers -->
+      <g fill="#525665" text-anchor="end">
+        <text x="98" y="130">01</text>
+        <text x="98" y="164">02</text>
+        <text x="98" y="198">03</text>
+        <text x="98" y="232">04</text>
+        <text x="98" y="266">05</text>
+        <text x="98" y="300">06</text>
+        <text x="98" y="334">07</text>
+      </g>
+
+      <!-- Line 01 -->
+      <text x="132" y="130"><tspan fill="#FF3B4E" font-weight="700">const</tspan><tspan fill="#FFFFFF" font-weight="700"> developer </tspan><tspan fill="#FF3B4E">=</tspan><tspan fill="#E4E4E7"> {</tspan></text>
+
+      <!-- Line 02 -->
+      <text x="160" y="164"><tspan fill="#A1A1AA">name:</tspan><tspan fill="#FFFFFF" font-weight="600">  "Jose Del Carmen Díaz"</tspan><tspan fill="#71717A">,</tspan></text>
+
+      <!-- Line 03 -->
+      <text x="160" y="198"><tspan fill="#A1A1AA">city:</tspan><tspan fill="#E4E4E7">  "Barranquilla, CO"</tspan><tspan fill="#71717A">,</tspan></text>
+
+      <!-- Line 04 -->
+      <text x="160" y="232"><tspan fill="#A1A1AA">role:</tspan><tspan fill="#FF4D5E" font-weight="700">  "FULL-STACK &amp; UI/UX"</tspan><tspan fill="#71717A">,</tspan></text>
+
+      <!-- Line 05 -->
+      <text x="160" y="266"><tspan fill="#A1A1AA">edu:</tspan><tspan fill="#FFFFFF">   ["SENA ADSO", "RIWI", "Google UX"]</tspan><tspan fill="#71717A">,</tspan></text>
+
+      <!-- Line 06 -->
+      <text x="160" y="300"><tspan fill="#A1A1AA">motto:</tspan><tspan fill="#FFFFFF" font-weight="700"> "Código + Arte en sintonía"</tspan></text>
+
+      <!-- Line 07 -->
+      <text x="132" y="334"><tspan fill="#E4E4E7">};</tspan></text>
+
+      <!-- Blinking Crimson Block Cursor -->
+      <rect x="158" y="317" width="9" height="20" rx="2" fill="#FF3349" class="blink"/>
+    </g>
+
+    <!-- Diagonal Glass Sheen Sweep over Editor -->
+    <polygon points="-160,98 -40,98 80,362 -40,362" fill="url(#sweepGrad)" class="sweepLeft"/>
+
+    <!-- Bottom Studio Bar (y=374 to 414) -->
+    <g transform="translate(62, 378)">
+      <!-- Animated Equalizer Bars (Red & White) -->
+      <rect x="0" y="10" width="6" height="14" rx="2" fill="#FF3048">
+        <animate attributeName="y" values="12;3;12" dur="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="12;21;12" dur="0.9s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="11" y="4" width="6" height="20" rx="2" fill="#FFFFFF">
+        <animate attributeName="y" values="3;11;3" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="21;13;21" dur="1.1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="22" y="0" width="6" height="24" rx="2" fill="#FF3048">
+        <animate attributeName="y" values="8;0;8" dur="0.75s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="16;24;16" dur="0.75s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="33" y="6" width="6" height="18" rx="2" fill="#FFFFFF">
+        <animate attributeName="y" values="4;13;4" dur="1.25s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="20;11;20" dur="1.25s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Status Indicator -->
+    <circle cx="126" cy="391" r="5.5" fill="#FF3349" class="pulse"/>
+    <circle cx="126" cy="391" r="5.5" fill="none" stroke="#FF3349" stroke-width="1.2">
+      <animate attributeName="r" values="5.5;12" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="142" y="396" class="white" font-size="14.5" font-weight="700">Build Ready</text>
+    <text x="234" y="396" class="muted mono" font-size="13">· 100% PASS</text>
+
+    <!-- Sculpted Liquid Glass "Run Project" Button -->
+    <rect x="540" y="373" width="160" height="36" rx="18" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.4"/>
+    <path d="M 564 384 L 564 398 L 576 391 Z" fill="#FF3349"/>
+    <text x="588" y="396" class="white" font-size="13.5" font-weight="700">Run Project</text>
   </g>
 
-  <!-- title -->
-  <text x="450" y="110" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800" fill="url(#title)" filter="url(#glow)">
-    Hola, soy Jose
-    <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/>
-  </text>
+  <!-- Animated Laser Glint Around Left Panel -->
+  <rect x="34" y="24" width="690" height="402" rx="34" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.75" stroke-dasharray="160 2040" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="2200" to="0" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#FFFFFF;#FF3349;#FFFFFF" dur="4.5s" repeatCount="indefinite"/>
+  </rect>
 
-  <!-- typing subtitle -->
-  <g clip-path="url(#typing)">
-    <text x="450" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="24" fill="#c9d1d9">
-      &gt; Desarrollador de software_
+  <!-- ===================================================== -->
+  <!-- 4. RIGHT CONTAINER: EXECUTIVE PORTFOLIO & CARDS       -->
+  <!-- ===================================================== -->
+  <g clip-path="url(#rightClip)">
+    <!-- Top Curved Glass Specular Highlight -->
+    <path d="M 746 24 H 1566 V 82 Q 1156 115 746 74 Z" fill="url(#topGloss)"/>
+
+    <!-- ROW 1: TOP FROSTED PILLS (y=40) -->
+    <!-- Left Location & Role Pill -->
+    <rect x="774" y="40" width="352" height="42" rx="21" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.1"/>
+    <circle cx="800" cy="61" r="16" fill="#3A0A14" stroke="#FF4052" stroke-width="1.3"/>
+    <text x="800" y="66" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="800" class="mono">&lt;/&gt;</text>
+    <text x="826" y="66" class="white" font-size="14.5" font-weight="700">Barranquilla, CO</text>
+    <circle cx="964" cy="61" r="3" fill="#FF4052"/>
+    <text x="978" y="66" fill="#E4E4E7" font-size="14.5" font-weight="600">Full-Stack &amp; UX</text>
+
+    <!-- Right Portfolio Link Pill (Fixed Real URL: jose2520.github.io) -->
+    <rect x="1312" y="40" width="228" height="42" rx="21" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.1"/>
+    <circle cx="1336" cy="61" r="5.5" fill="#FF3349" class="pulse"/>
+    <text x="1352" y="66" class="white mono" font-size="13.5" font-weight="700">jose2520.github.io</text>
+    <path d="M 1518 54 V 66 M 1518 54 H 1506 M 1518 54 L 1505 67" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- ROW 2: EYEBROW & ANIMATED SPEED STRIPES (y=116) -->
+    <text x="776" y="118" fill="#FF4357" font-size="15" font-weight="800" letter-spacing="2.4">
+      FULL-STACK &amp; MOBILE DEVELOPER · UI/UX DESIGNER
     </text>
+    <!-- 3 Animated Crimson/White Speed Stripes -->
+    <g transform="translate(1288, 103)">
+      <path d="M 16 0 L 0 17 H 12 L 28 0 Z" fill="#FF3048">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 36 0 L 20 17 H 32 L 48 0 Z" fill="#FFFFFF">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 56 0 L 40 17 H 52 L 68 0 Z" fill="#FF3048">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- ROW 3: MONUMENTAL HERO NAME & SUBTITLE -->
+    <text x="774" y="172" class="white" font-size="50" font-weight="800" letter-spacing="-1.6">
+      Jose Del Carmen <tspan fill="url(#redText)">Díaz</tspan>
+    </text>
+    <text x="776" y="201" fill="#D4D4D8" font-size="15.5" font-weight="500">
+      Convergencia entre la lógica del software y el poder del diseño para crear experiencias.
+    </text>
+
+    <!-- Floating Giant Watermark Emblem on Far Right -->
+    <g class="float" opacity="0.28" fill="none" stroke="#FF3349" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 1482 136 L 1454 162 L 1482 188 M 1518 136 L 1546 162 L 1518 188 M 1506 126 L 1482 196"/>
+    </g>
+
+    <!-- Animated Laser Divider Track (y=218) -->
+    <path d="M 776 218 H 1540" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1.2"/>
+    <rect x="776" y="216.5" width="160" height="3" rx="1.5" fill="#FF3349">
+      <animate attributeName="x" values="776;1380;776" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FF3349;#FFFFFF;#FF3349" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- =================================================== -->
+    <!-- ROW 4: 3 LIQUID GLASS SPECIALTY CARDS (y=232..362)  -->
+    <!-- =================================================== -->
+
+    <!-- CARD 1: FRONTEND & APP (x=774, w=244, h=130) -->
+    <g class="card1">
+      <rect x="774" y="236" width="244" height="130" rx="24" fill="#FF2038" opacity="0.12" filter="url(#cardGlow)"/>
+      <rect x="774" y="232" width="244" height="130" rx="24" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.3"/>
+      <!-- Inner Diagonal Glass Facet Line -->
+      <path d="M 775 332 L 846 232 H 996" stroke="#FF3349" stroke-width="1.1" opacity="0.32" fill="none"/>
+      <!-- Top Specular Highlight -->
+      <line x1="798" y1="232.6" x2="930" y2="232.6" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.55"/>
+      <!-- Icon Squircle -->
+      <rect x="796" y="250" width="46" height="46" rx="13" fill="url(#iconBoxGrad)" stroke="#FF344A" stroke-width="1.5"/>
+      <text x="819" y="279" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="800" class="mono">&lt;/&gt;</text>
+      <!-- Tag & Content -->
+      <text x="858" y="268" fill="#FF6B79" font-size="11" font-weight="800" letter-spacing="1.5" class="mono">01 / APP</text>
+      <text x="858" y="286" fill="#A1A1AA" font-size="11" font-weight="500">Web &amp; Mobile UI</text>
+      <text x="796" y="322" class="white" font-size="18.5" font-weight="800">Frontend &amp; App</text>
+      <text x="796" y="346" fill="#D4D4D8" font-size="13.2" font-weight="500">React · Next.js · React Native</text>
+    </g>
+
+    <!-- CARD 2: BACKEND CORE (x=1034, w=244, h=130) -->
+    <g class="card2">
+      <rect x="1034" y="236" width="244" height="130" rx="24" fill="#FF2038" opacity="0.10" filter="url(#cardGlow)"/>
+      <rect x="1034" y="232" width="244" height="130" rx="24" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.3"/>
+      <!-- Inner Diagonal Glass Facet Line -->
+      <path d="M 1035 332 L 1106 232 H 1256" stroke="#FF3349" stroke-width="1.1" opacity="0.32" fill="none"/>
+      <!-- Top Specular Highlight -->
+      <line x1="1058" y1="232.6" x2="1190" y2="232.6" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.55"/>
+      <!-- Icon Squircle -->
+      <rect x="1056" y="250" width="46" height="46" rx="13" fill="url(#iconBoxGrad)" stroke="#FF344A" stroke-width="1.5"/>
+      <ellipse cx="1079" cy="264" rx="12.5" ry="4.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+      <path d="M 1066.5 264 V 279 C 1066.5 285, 1091.5 285, 1091.5 279 V 264 M 1066.5 271.5 C 1066.5 277.5, 1091.5 277.5, 1091.5 271.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+      <!-- Tag & Content -->
+      <text x="1118" y="268" fill="#FF6B79" font-size="11" font-weight="800" letter-spacing="1.5" class="mono">02 / API</text>
+      <text x="1118" y="286" fill="#A1A1AA" font-size="11" font-weight="500">Arquitectura &amp; BD</text>
+      <text x="1056" y="322" class="white" font-size="18.5" font-weight="800">Backend Core</text>
+      <text x="1056" y="346" fill="#D4D4D8" font-size="13.2" font-weight="500">.NET · Node.js · Python · SQL</text>
+    </g>
+
+    <!-- CARD 3: UI/UX & DATOS (x=1294, w=246, h=130) -->
+    <g class="card3">
+      <rect x="1294" y="236" width="246" height="130" rx="24" fill="#FF2038" opacity="0.12" filter="url(#cardGlow)"/>
+      <rect x="1294" y="232" width="246" height="130" rx="24" fill="url(#cardGlass)" stroke="url(#cardRim)" stroke-width="1.3"/>
+      <!-- Inner Diagonal Glass Facet Line -->
+      <path d="M 1295 332 L 1366 232 H 1518" stroke="#FF3349" stroke-width="1.1" opacity="0.32" fill="none"/>
+      <!-- Top Specular Highlight -->
+      <line x1="1318" y1="232.6" x2="1450" y2="232.6" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.55"/>
+      <!-- Icon Squircle -->
+      <rect x="1316" y="250" width="46" height="46" rx="13" fill="url(#iconBoxGrad)" stroke="#FF344A" stroke-width="1.5"/>
+      <path d="M 1330 282 L 1349 263 M 1334 263 H 1349 V 278" fill="none" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Tag & Content -->
+      <text x="1378" y="268" fill="#FF6B79" font-size="11" font-weight="800" letter-spacing="1.5" class="mono">03 / UX</text>
+      <text x="1378" y="286" fill="#A1A1AA" font-size="11" font-weight="500">Diseño &amp; Ciencia Datos</text>
+      <text x="1316" y="322" class="white" font-size="18.5" font-weight="800">UI/UX &amp; Datos</text>
+      <text x="1316" y="346" fill="#D4D4D8" font-size="13.2" font-weight="500">Figma · Google UX · Pandas</text>
+    </g>
+
+    <!-- =================================================== -->
+    <!-- ROW 5: DEDICATED BOTTOM TECH DOCK (y=376..418)      -->
+    <!-- =================================================== -->
+    <path d="M 774 376 H 1540" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="1"/>
+
+    <!-- React Atom Icon (Spinning Gently at y=398) -->
+    <g class="spinSlow">
+      <ellipse cx="800" cy="396" rx="13" ry="5" fill="none" stroke="#FF4052" stroke-width="1.5"/>
+      <ellipse cx="800" cy="396" rx="13" ry="5" fill="none" stroke="#FFFFFF" stroke-width="1.3" transform="rotate(60 800 396)"/>
+      <ellipse cx="800" cy="396" rx="13" ry="5" fill="none" stroke="#FFFFFF" stroke-width="1.3" transform="rotate(120 800 396)"/>
+      <circle cx="800" cy="396" r="2.5" fill="#FF4052"/>
+    </g>
+
+    <!-- Next.js Badge -->
+    <circle cx="848" cy="396" r="12" fill="#14151C" stroke="#E4E4E7" stroke-width="1.5"/>
+    <text x="848" y="400.5" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="800">N</text>
+
+    <!-- .NET Badge -->
+    <rect x="876" y="384" width="44" height="24" rx="7" fill="#1E0B12" stroke="#FF3349" stroke-width="1.2"/>
+    <text x="898" y="400.5" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">.NET</text>
+
+    <!-- TS Hexagon Badge -->
+    <path d="M 948 383 L 961 389.5 V 402.5 L 948 409 L 935 402.5 V 389.5 Z" fill="#14151C" stroke="#E4E4E7" stroke-width="1.5"/>
+    <text x="948" y="400" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="800">TS</text>
+
+    <!-- Python Badge -->
+    <text x="988" y="402" fill="#FFFFFF" font-size="15.5" font-weight="800">Py</text>
+
+    <!-- PHP Badge -->
+    <text x="1028" y="401" fill="#A1A1AA" font-size="14" font-weight="700" font-style="italic">php</text>
+
+    <!-- SQL Database Icon -->
+    <ellipse cx="1078" cy="389" rx="9" ry="3.8" fill="none" stroke="#E4E4E7" stroke-width="1.5"/>
+    <path d="M 1069 389 V 402 C 1069 406.5, 1087 406.5, 1087 402 V 389" fill="none" stroke="#E4E4E7" stroke-width="1.5"/>
+
+    <!-- Figma Cluster Icon (Red / White / Silver) -->
+    <circle cx="1118" cy="390" r="5" fill="#FF3349"/>
+    <circle cx="1118" cy="402" r="5" fill="#FFFFFF"/>
+    <circle cx="1129" cy="396" r="5" fill="#A1A1AA"/>
+
+    <!-- Vertical Divider -->
+    <line x1="1156" y1="384" x2="1156" y2="408" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.2"/>
+
+    <!-- Motto & Speed Chevrons -->
+    <text x="1178" y="401" fill="#D4D4D8" font-size="13" font-weight="700" letter-spacing="2.2">
+      DISEÑA <tspan fill="#FF3349">·</tspan> DESARROLLA <tspan fill="#FF3349">·</tspan> INNOVA
+    </text>
+
+    <g transform="translate(1480, 389)">
+      <path d="M 10 0 L 0 13 H 8 L 18 0 Z" fill="#FF3349"/>
+      <path d="M 24 0 L 14 13 H 22 L 32 0 Z" fill="#FFFFFF"/>
+      <path d="M 38 0 L 28 13 H 36 L 46 0 Z" fill="#FF3349"/>
+    </g>
+
+    <!-- Diagonal Glass Sheen Sweep over Right Panel -->
+    <polygon points="560,24 690,24 850,426 720,426" fill="url(#sweepGrad)" class="sweepRight"/>
   </g>
 
-  <!-- animated wave -->
-  <path d="M0 215 Q 112 190 225 215 T 450 215 T 675 215 T 900 215" fill="none" stroke="url(#wave)" stroke-width="3" stroke-linecap="round">
-    <animate attributeName="d" dur="5s" repeatCount="indefinite"
-      values="M0 215 Q 112 190 225 215 T 450 215 T 675 215 T 900 215;
-              M0 215 Q 112 240 225 215 T 450 215 T 675 215 T 900 215;
-              M0 215 Q 112 190 225 215 T 450 215 T 675 215 T 900 215"/>
-  </path>
+  <!-- Animated Laser Glint Around Right Panel -->
+  <rect x="746" y="24" width="820" height="402" rx="34" fill="none" stroke="#FF3349" stroke-width="1.8" stroke-opacity="0.7" stroke-dasharray="180 2260" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="2440" to="0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#FF3349;#FFFFFF;#FF3349" dur="5s" repeatCount="indefinite"/>
+  </rect>
 </svg>
