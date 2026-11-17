@@ -1,0 +1,15 @@
+{
+  "name": "jose2520-profile-svg",
+  "private": true,
+  "type": "module",
+  "description": "Genera los SVG del perfil (banner y footer, tema oscuro y claro) con fuentes embebidas.",
+  "scripts": {
+    "build": "node build-svg.mjs"
+  },
+  "dependencies": {
+    "@fontsource/bricolage-grotesque": "^5.2.0",
+    "@fontsource/geist-mono": "^5.2.0",
+    "fontkit": "^2.0.4",
+    "subset-font": "^2.4.0"
+  }
+}
