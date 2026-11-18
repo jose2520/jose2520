@@ -1,8 +1,7 @@
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                 style='isolation: isolate' viewBox='0 0 495 195' width='495px' height='195px' direction='ltr'>
         <style>:root{--s-bg:#0E080B;--s-stroke:#2A2228;--s-ink:#F5F2F0;--s-muted:#A39FA8;--s-accent:#FF3349;}@media (prefers-color-scheme: light){:root{--s-bg:#FAF7FF;--s-stroke:#E4DAF6;--s-ink:#171222;--s-muted:#5E546E;--s-accent:#8B5CF6;}}
-
-            @keyframes currstreak {
+@keyframes currstreak {
                 0% { font-size: 3px; opacity: 0.2; }
                 80% { font-size: 34px; opacity: 1; }
                 100% { font-size: 28px; opacity: 1; }

@@ -34,20 +34,23 @@
 
 Construyo productos web y móviles donde la arquitectura técnica y el diseño visual trabajan juntos. Vengo de la ilustración y el diseño gráfico, y hoy llevo esa mirada al código: del boceto en Figma a la app en producción.
 
-- **Formación:** Tecnólogo en Análisis y Desarrollo de Software (**SENA**), desarrollador Full-Stack en **RIWI** y certificado en **Google UX Design**. Base artística e ilustración (**EDA**) y diseño gráfico (**SENA**).
-- **Enfoque:** web y mobile con `React`, `Next.js`, `React Native` y `TypeScript`; APIs con `.NET`, `Node.js`, `Python` y `Laravel`; datos con `PostgreSQL`, `MongoDB` y `Pandas`.
+- **Formación:** Tecnólogo en Análisis y Desarrollo de Software (**SENA**, grado 2026), formación Full-Stack en **RIWI** (en curso) y certificado profesional **Google UX Design**. Cursos de análisis de datos (**MinTIC** y **BeTek**) y Scrum (**SENA**). Base artística e ilustración (**EDA**) y diseño gráfico (**SENA**).
+- **Enfoque:** web y mobile con `React`, `Next.js`, `React Native` y `TypeScript`; APIs REST con `.NET`, `Node.js`, `Python` y `Laravel`; datos con `PostgreSQL`, `MySQL`, `MongoDB` y `Pandas`; despliegue con `Docker` y `Azure`.
+- **Idiomas:** español (nativo) e inglés (A2).
 
-## Proyecto destacado
+## Experiencia destacada
 
-**Colegio Real Royal School.** Lideré su ecosistema digital completo, desde el prototipado en Figma hasta producción.
+**Programador · Colegio Real Royal School** <sub>Barranquilla · ago 2025 – ene 2026</sub>
 
-| Producto | Stack |
-| :-- | :-- |
-| Plataforma web | `PHP` · `MySQL` · `Bootstrap` |
-| App móvil administrativa | `React Native` · `Expo` |
-| Diseño de producto | `Figma` (prototipos y UI) |
+Desarrollé el ecosistema digital de la institución, desde el prototipado en Figma hasta producción.
 
-## Tech stack
+| Producto | Qué resuelve | Stack |
+| :-- | :-- | :-- |
+| Plataforma web | Difusión del campeonato: gestión de jugadores, puntajes y contenido multimedia | `PHP` · `MySQL` · `Bootstrap` |
+| App móvil administrativa | Gestión académica y operativa del colegio | `React Native` · `Expo` |
+| Diseño de producto | Prototipos y UI de ambas soluciones | `Figma` |
+
+## Stack tecnológico
 
 #### Frontend y mobile
 <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,tailwind,bootstrap,html,css" alt="React, Next.js, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML y CSS" /></a>
@@ -57,8 +60,8 @@ Construyo productos web y móviles donde la arquitectura técnica y el diseño v
 <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=cs,dotnet,nodejs,express,python,php,laravel,postgres,mysql,mongodb" alt="C#, .NET, Node.js, Express, Python, PHP, Laravel, PostgreSQL, MySQL y MongoDB" /></a>
 
 #### Diseño, datos y entorno
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=figma,ps,ai,docker,azure,linux,git,github,postman" alt="Figma, Photoshop, Illustrator, Docker, Azure, Linux, Git, GitHub y Postman" /></a>
-<br /><sub>Análisis de datos con Python y Pandas.</sub>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=figma,ps,ai,docker,azure,linux,git,github,vscode,postman" alt="Figma, Photoshop, Illustrator, Docker, Azure, Linux, Git, GitHub, VS Code y Postman" /></a>
+<br /><sub>Análisis de datos con Python: Pandas, NumPy, Matplotlib, Seaborn y Jupyter Notebook. Metodología ágil Scrum.</sub>
 
 ## Actividad en GitHub
 
@@ -72,9 +75,31 @@ Construyo productos web y móviles donde la arquitectura técnica y el diseño v
 
 <p align="center">
   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/0-profile-details.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/0-profile-details.svg" />
+    <img src="./profile-summary-card-output/github_dark/0-profile-details.svg" width="97%" alt="Resumen de contribuciones de jose2520" />
+  </picture>
+</p>
+
+
+<p align="center">
+  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/2-most-commit-language.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/2-most-commit-language.svg" />
     <img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" width="48%" alt="Lenguajes con más commits de jose2520" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/1-repos-per-language.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/1-repos-per-language.svg" />
+    <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" width="48%" alt="Repositorios por lenguaje de jose2520" />
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/3-stats.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/3-stats.svg" />
+    <img src="./profile-summary-card-output/github_dark/3-stats.svg" width="48%" alt="Estadísticas de GitHub de jose2520" />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/4-productive-time.svg" />

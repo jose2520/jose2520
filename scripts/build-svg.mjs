@@ -519,7 +519,7 @@ if (streakSrc) {
   console.log('✓ profile-summary-card-output/streak-stats(.light).svg');
 }
 
-for (const card of ['2-most-commit-language.svg', '4-productive-time.svg']) {
+for (const card of ['0-profile-details.svg', '1-repos-per-language.svg', '2-most-commit-language.svg', '3-stats.svg', '4-productive-time.svg']) {
   const darkFile = path.join(cardsDir, 'github_dark', card);
   const lightFile = path.join(cardsDir, 'default', card);
   if (fs.existsSync(darkFile)) {
@@ -532,6 +532,10 @@ for (const card of ['2-most-commit-language.svg', '4-productive-time.svg']) {
       .replace(/#0366d6|var\(--c-title\)/gi, 'var(--c-title)')
       .replace(/#77909c|var\(--c-txt\)/gi, 'var(--c-txt)')
       .replace(/#40c463|var\(--c-bar\)/gi, 'var(--c-bar)')
+      .replace(/#8b949e/gi, 'var(--c-bar)')
+      .replace(/jose2520 \(Jose del C(?:…|\.\.\.)\)/g, 'jose2520 (Jose Del Carmen Díaz)')
+      .replace(/transform="translate\(295,10\)"/g, 'transform="translate(312,10)"')
+      .replace(/(font-size:\s*)14px(;[^>]*>josedelcarmen_diaz@outlook\.com<)/g, '$112.5px$2')
       .replace('<style>', `<style>:root{${isAdapt ? dVars : lVars}}${isAdapt ? `@media (prefers-color-scheme: light){:root{${lVars}}}` : ''}`);
     fs.writeFileSync(darkFile, adapt(raw, true));
     fs.writeFileSync(lightFile, adapt(raw, false));
