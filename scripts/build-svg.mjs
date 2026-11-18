@@ -165,49 +165,43 @@ const anchor = (x, y, s = 9, fill = V.board) =>
   `<rect x="${r1(x - s / 2)}" y="${r1(y - s / 2)}" width="${s}" height="${s}" fill="${fill}" stroke="${V.accent}" stroke-width="1.6"/>`;
 
 // ---------------------------------------------------------------------------
-// Banner
+// Banner (panorámico: más ancho y más bajo, 1500x304)
 // ---------------------------------------------------------------------------
 function banner(variant, fonts) {
-  const W = 1200, H = 408, X = 56;
+  const W = 1500, H = 304, X = 56;
 
   // Nombre + caja de selección
-  const nameSize = 58, nameLs = -1, nameY = 122;
+  const nameSize = 56, nameLs = -1, nameY = 108;
   const nameW = measure('display', C.name, nameSize, nameLs);
-  const sel = { x: X - 12, y: 68, w: r1(nameW + 26), h: 72 };
+  const sel = { x: X - 12, y: 56, w: r1(nameW + 26), h: 68 };
 
   // Fila superior: etiqueta del frame + estado
   const handleW = measure('mono', C.handle, 15);
   const statusX = r1(X + 22 + handleW + 32);
 
-  // Chips agrupados en 2 filas a la izquierda
-  const chipH = 34, padX = 14, gap = 8, groupGap = 28, chipSize = 14.5;
-  const rowY = [
-    { labelY: 256, chipY: 268 },
-    { labelY: 330, chipY: 342 },
-  ];
-  const rowCursor = [X, X];
-  let delay = 0.45;
+  // Chips agrupados en 1 sola fila panorámica inferior
+  const chipH = 34, padX = 15.8, gap = 9, groupGap = 38, chipSize = 15, labelY = 238, chipY = 250;
+  let cx = X, delay = 0.45;
   const groups = C.groups.map((g) => {
-    const r = g.row ?? 0;
-    const startX = rowCursor[r];
+    const startX = cx;
     const chips = g.items.map((item) => {
       const w = r1(measure('text', item, chipSize) + padX * 2);
-      const chip = { item, x: r1(rowCursor[r]), w, d: delay };
-      rowCursor[r] += w + gap; delay += 0.04;
+      const chip = { item, x: r1(cx), w, d: delay };
+      cx += w + gap; delay += 0.04;
       return chip;
     });
-    rowCursor[r] += groupGap - gap;
-    return { ...g, x: startX, ...rowY[r], chips };
+    cx += groupGap - gap;
+    return { ...g, x: startX, labelY, chipY, chips };
   });
 
-  // Ventana trasera (terminal) desplazada a la izquierda + ventana delantera (portafolio.fig)
-  const T = { x: 716, y: 28, w: 316, h: 210 };
-  const B = { x: 856, y: 86, w: 292, h: 290 };
-  const curve = 'M 886 234 C 912 136, 986 136, 998 188 S 1080 248, 1110 150';
+  // Ventana trasera (terminal) + ventana delantera (portafolio.fig)
+  const T = { x: 862, y: 20, w: 312, h: 174 };
+  const B = { x: 1112, y: 38, w: 332, h: 182 };
+  const curve = 'M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80';
   const codeLineDark = C.pathCode2(PALETTES.dark.accent);
   const codeLineLight = C.pathCode2(PALETTES.light.accent);
-  const codeW = Math.max(measure('mono', C.pathCode1, 12.5), measure('mono', codeLineDark, 12.5));
-  const promptW = measure('mono', 'jose.dev@full-stack:~$ ', 13);
+  const codeW = Math.max(measure('mono', C.pathCode1, 12), measure('mono', codeLineDark, 12));
+  const promptW = measure('mono', 'jose.dev@full-stack:~$ ', 12.5);
 
   const chipsSvg = groups.map((g) => `
     <g class="rise" style="animation-delay:${g.chips[0].d.toFixed(2)}s">
@@ -229,8 +223,8 @@ function banner(variant, fonts) {
         <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="${curve}"/>
       </g>`;
 
-  const headY = B.y + 32;
-  const inspectY = B.y + B.h - 94;
+  const headY = B.y + 30;
+  const inspectY = B.y + B.h - 62;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="title desc">
   <title id="title">${esc(C.fullName)} (${C.handle}): ${esc(C.role)}</title>
@@ -239,7 +233,7 @@ function banner(variant, fonts) {
     <filter id="winShadow" x="-15%" y="-15%" width="130%" height="130%">
       <feDropShadow dx="-6" dy="-4" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
-    <clipPath id="type"><rect x="${B.x + 18}" y="${inspectY + 32}" width="0" height="54">
+    <clipPath id="type"><rect x="${B.x + 16}" y="${inspectY + 22}" width="0" height="36">
       <animate attributeName="width" from="0" to="${r1(codeW + 8)}" begin="1.2s" dur="1.4s" fill="freeze"/>
     </rect></clipPath>
     <style>${baseStyle(variant)}
@@ -252,16 +246,16 @@ function banner(variant, fonts) {
 ${fonts}
     </style>
   </defs>
-${canvas(W, H, `<ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow)"/>
-    <ellipse cx="140" cy="390" rx="340" ry="160" fill="url(#glow)" opacity=".6"/>`)}
+${canvas(W, H, `<ellipse cx="1220" cy="120" rx="420" ry="210" fill="url(#glow)"/>
+    <ellipse cx="180" cy="300" rx="380" ry="140" fill="url(#glow)" opacity=".6"/>`)}
 
   <!-- Etiqueta del frame + estado -->
   <g class="rise">
-    <path d="M ${X + 4} 38 v 14 M ${X + 12} 38 v 14 M ${X} 42 h 16 M ${X} 48 h 16" stroke="${V.accent}" stroke-width="1.8" stroke-linecap="round"/>
-    <text x="${X + 22}" y="51" class="mono" font-size="15" fill="${V.accent}">${C.handle}</text>
-    <circle cx="${statusX}" cy="46" r="4.5" fill="${V.accent}"/>
-    <circle cx="${statusX}" cy="46" r="4.5" fill="none" stroke="${V.accent}" stroke-width="1.5" class="ring"/>
-    <text x="${statusX + 13}" y="51" class="text" font-size="15" fill="${V.muted}">${esc(C.status)}</text>
+    <path d="M ${X + 4} 28 v 14 M ${X + 12} 28 v 14 M ${X} 32 h 16 M ${X} 38 h 16" stroke="${V.accent}" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="${X + 22}" y="41" class="mono" font-size="15" fill="${V.accent}">${C.handle}</text>
+    <circle cx="${statusX}" cy="36" r="4.5" fill="${V.accent}"/>
+    <circle cx="${statusX}" cy="36" r="4.5" fill="none" stroke="${V.accent}" stroke-width="1.5" class="ring"/>
+    <text x="${statusX + 13}" y="41" class="text" font-size="15" fill="${V.muted}">${esc(C.status)}</text>
   </g>
 
   <!-- Nombre seleccionado -->
@@ -273,58 +267,58 @@ ${canvas(W, H, `<ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow)"/
   </g>
 
   <!-- Rol y propuesta -->
-  <text x="${X}" y="180" class="text rise" style="animation-delay:.16s" font-size="21" fill="${V.ink}">${esc(C.role)}</text>
-  <text x="${X}" y="210" class="text rise" style="animation-delay:.24s" font-size="18" fill="${V.muted}">${esc(C.pitch)}</text>
+  <text x="${X}" y="162" class="text rise" style="animation-delay:.16s" font-size="21" fill="${V.ink}">${esc(C.role)}</text>
+  <text x="${X}" y="192" class="text rise" style="animation-delay:.24s" font-size="18" fill="${V.muted}">${esc(C.pitch)}</text>
 
   <!-- Stack -->${chipsSvg}
 
   <!-- Ventana trasera: terminal jose.dev@full-stack:~$ -->
   <g class="fade" style="animation-delay:.12s">
-    <rect x="${T.x}" y="${T.y}" width="${T.w}" height="${T.h}" rx="14" fill="${V.board}" stroke="${V.accent}" stroke-width="1.3" style="stroke-opacity:${V.termStrokeO}"/>
-    <path d="M ${T.x} ${T.y + 36} H ${T.x + T.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}"/>
-    <circle cx="${T.x + 18}" cy="${T.y + 18}" r="4" fill="${V.accent}" fill-opacity=".45"/>
-    <circle cx="${T.x + 31}" cy="${T.y + 18}" r="4" fill="${V.accent}" fill-opacity=".72"/>
-    <circle cx="${T.x + 44}" cy="${T.y + 18}" r="4" fill="${V.accent}"/>
-    <text x="${T.x + 58}" y="${T.y + 22.5}" class="mono" font-size="13">
+    <rect x="${T.x}" y="${T.y}" width="${T.w}" height="${T.h}" rx="13" fill="${V.board}" stroke="${V.accent}" stroke-width="1.3" style="stroke-opacity:${V.termStrokeO}"/>
+    <path d="M ${T.x} ${T.y + 32} H ${T.x + T.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}"/>
+    <circle cx="${T.x + 16}" cy="${T.y + 16}" r="3.8" fill="${V.accent}" fill-opacity=".45"/>
+    <circle cx="${T.x + 28}" cy="${T.y + 16}" r="3.8" fill="${V.accent}" fill-opacity=".72"/>
+    <circle cx="${T.x + 40}" cy="${T.y + 16}" r="3.8" fill="${V.accent}"/>
+    <text x="${T.x + 54}" y="${T.y + 20.5}" class="mono" font-size="12.5">
       <tspan fill="${V.accent}">jose.dev@full-stack</tspan><tspan fill="${V.ink}">:</tspan><tspan fill="${V.accentSoft}">~</tspan><tspan fill="${V.ink}">$</tspan>
     </text>
-    <rect x="${r1(T.x + 58 + promptW)}" y="${T.y + 11}" width="7.5" height="15" rx="1.5" fill="${V.accent}" class="blink"/>
-    <g class="mono" font-size="12" fill="${V.muted}">
-      <text x="${T.x + 18}" y="${T.y + 62}" fill="${V.ink}">$ npm run dev</text>
-      <text x="${T.x + 18}" y="${T.y + 88}"><tspan fill="${V.accent}">✓</tspan> web    ready</text>
-      <text x="${T.x + 18}" y="${T.y + 112}"><tspan fill="${V.accent}">✓</tspan> mobile ready</text>
-      <text x="${T.x + 18}" y="${T.y + 136}"><tspan fill="${V.accent}">✓</tspan> api    online</text>
-      <text x="${T.x + 18}" y="${T.y + 160}"><tspan fill="${V.accent}">✓</tspan> ui/ux  synced</text>
-      <text x="${T.x + 18}" y="${T.y + 188}" fill="${V.faint}">listening :3000</text>
+    <rect x="${r1(T.x + 54 + promptW)}" y="${T.y + 9.5}" width="7" height="14" rx="1.5" fill="${V.accent}" class="blink"/>
+    <g class="mono" font-size="11.5" fill="${V.muted}">
+      <text x="${T.x + 16}" y="${T.y + 54}" fill="${V.ink}">$ npm run dev</text>
+      <text x="${T.x + 16}" y="${T.y + 76}"><tspan fill="${V.accent}">✓</tspan> web    ready</text>
+      <text x="${T.x + 16}" y="${T.y + 98}"><tspan fill="${V.accent}">✓</tspan> mobile ready</text>
+      <text x="${T.x + 16}" y="${T.y + 120}"><tspan fill="${V.accent}">✓</tspan> api    online</text>
+      <text x="${T.x + 16}" y="${T.y + 142}"><tspan fill="${V.accent}">✓</tspan> ui/ux  synced</text>
+      <text x="${T.x + 16}" y="${T.y + 162}" fill="${V.faint}">listening :3000</text>
     </g>
   </g>
 
   <!-- Ventana delantera: mesa de trabajo portafolio.fig -->
   <g class="fade" style="animation-delay:.22s">
-    <rect x="${B.x}" y="${B.y}" width="${B.w}" height="${B.h}" rx="14" fill="${V.board}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}" filter="url(#winShadow)"/>
+    <rect x="${B.x}" y="${B.y}" width="${B.w}" height="${B.h}" rx="13" fill="${V.board}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}" filter="url(#winShadow)"/>
     <path d="M ${B.x} ${headY} H ${B.x + B.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeO}"/>
-    <path d="M ${B.x + 18} ${B.y + 11} h 10 v 10 h -10 z" fill="none" stroke="${V.accent}" stroke-width="1.5"/>
-    <text x="${B.x + 36}" y="${B.y + 21}" class="mono" font-size="13" fill="${V.ink}">${C.artboard}</text>
-    <text x="${B.x + B.w - 16}" y="${B.y + 21}" text-anchor="end" class="mono" font-size="11.5" fill="${V.faint}">fig · 100%</text>
+    <path d="M ${B.x + 16} ${B.y + 10} h 10 v 10 h -10 z" fill="none" stroke="${V.accent}" stroke-width="1.5"/>
+    <text x="${B.x + 32}" y="${B.y + 20}" class="mono" font-size="12.5" fill="${V.ink}">${C.artboard}</text>
+    <text x="${B.x + B.w - 16}" y="${B.y + 20}" text-anchor="end" class="mono" font-size="11" fill="${V.faint}">fig · 100%</text>
     <path d="M ${B.x} ${inspectY} H ${B.x + B.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeO}"/>
-    <rect x="${B.x + 18}" y="${inspectY + 13}" width="10" height="10" rx="2" fill="${V.accent}"/>
-    <text x="${B.x + 34}" y="${inspectY + 22}" class="mono" font-size="12" fill="${V.muted}">stroke · <tspan class="only-dark">${PALETTES.dark.accent}</tspan><tspan class="only-light">${PALETTES.light.accent}</tspan> · 3px</text>
+    <rect x="${B.x + 16}" y="${inspectY + 9}" width="8" height="8" rx="2" fill="${V.accent}"/>
+    <text x="${B.x + 30}" y="${inspectY + 17}" class="mono" font-size="11" fill="${V.muted}">stroke · <tspan class="only-dark">${PALETTES.dark.accent}</tspan><tspan class="only-light">${PALETTES.light.accent}</tspan> · 3px</text>
   </g>
-  <path d="${curve}" fill="none" stroke="${V.accent}" stroke-width="3" stroke-linecap="round" pathLength="1" class="draw"/>
+  <path d="${curve}" fill="none" stroke="${V.accent}" stroke-width="2.8" stroke-linecap="round" pathLength="1" class="draw"/>
   <g class="fade" style="animation-delay:2.2s">
-    <path d="M 986 136 L 1010 242" stroke="${V.muted}" stroke-width="1.2"/>
-    <circle cx="986" cy="136" r="3.6" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
-    <circle cx="1010" cy="242" r="3.6" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
-    ${anchor(886, 234)} ${anchor(998, 188)} ${anchor(1110, 150)}
+    <path d="M 1252 68 L 1280 144" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="1252" cy="68" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="1280" cy="144" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    ${anchor(1144, 138, 8)} ${anchor(1266, 106, 8)} ${anchor(1396, 80, 8)}
   </g>
-  <g class="mono" font-size="12.5" fill="${V.ink}">
+  <g class="mono" font-size="11.5" fill="${V.ink}">
     <g class="type-anim" clip-path="url(#type)">
-      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${V.muted}">${esc(C.pathCode1)}</text>
-      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
+      <text x="${B.x + 16}" y="${inspectY + 37}" fill="${V.muted}">${esc(C.pathCode1)}</text>
+      <text x="${B.x + 16}" y="${inspectY + 53}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
     </g>
     <g class="type-static">
-      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${V.muted}">${esc(C.pathCode1)}</text>
-      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
+      <text x="${B.x + 16}" y="${inspectY + 37}" fill="${V.muted}">${esc(C.pathCode1)}</text>
+      <text x="${B.x + 16}" y="${inspectY + 53}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
     </g>
   </g>
   ${nib}

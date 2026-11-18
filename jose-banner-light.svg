@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 408" width="1200" height="408" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 304" width="1500" height="304" role="img" aria-labelledby="title desc">
   <title id="title">Jose Del Carmen Díaz Díaz (jose2520): Desarrollador Full-Stack y Mobile · Diseñador UI/UX</title>
   <desc id="desc">Banner con el nombre seleccionado como en una herramienta de diseño, una pestaña de terminal (jose.dev@full-stack:~$) en segundo plano y la mesa de trabajo portafolio.fig delante donde una pluma dibuja una curva Bézier junto a su código. Stack: web &amp; mobile: React, Next.js, React Native, TypeScript; backend &amp; datos: .NET, Node.js, Python, SQL; diseño &amp; entorno: Figma, Photoshop, Illustrator, Docker, Azure, Postman.</desc>
   <defs>
-    <clipPath id="clip"><rect width="1200" height="408" rx="18"/></clipPath>
+    <clipPath id="clip"><rect width="1500" height="304" rx="18"/></clipPath>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" style="stop-color:var(--bg1)"/>
       <stop offset="1" style="stop-color:var(--bg2)"/>
@@ -17,8 +17,8 @@
     <filter id="winShadow" x="-15%" y="-15%" width="130%" height="130%">
       <feDropShadow dx="-6" dy="-4" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
-    <clipPath id="type"><rect x="874" y="314" width="0" height="54">
-      <animate attributeName="width" from="0" to="248" begin="1.2s" dur="1.4s" fill="freeze"/>
+    <clipPath id="type"><rect x="1128" y="180" width="0" height="36">
+      <animate attributeName="width" from="0" to="238.4" begin="1.2s" dur="1.4s" fill="freeze"/>
     </rect></clipPath>
     <style>
       :root { --bg1:#FAF7FF;--bg2:#F2ECFD;--dot:#231934;--dotO:0.09;--ink:#171222;--muted:#5E546E;--faint:#A79EB8;--accent:#8B5CF6;--accentSoft:#7C3AED;--glowO:0.16;--chipFill:#FFFFFF;--chipFillO:0.85;--chipStroke:#171222;--chipStrokeO:0.14;--board:#FFFFFF;--boardStroke:#171222;--boardStrokeO:0.12;--boardStrokeStrongO:0.17;--edge:#171222;--edgeO:0.1;--termStrokeO:0.38;--tickerO:0.6;--shadowO:0.12; }
@@ -51,151 +51,151 @@
   </defs>
 
   <g clip-path="url(#clip)">
-    <rect width="1200" height="408" fill="url(#bg)"/>
-    <rect width="1200" height="408" fill="url(#grid)"/>
-    <ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow)"/>
-    <ellipse cx="140" cy="390" rx="340" ry="160" fill="url(#glow)" opacity=".6"/>
+    <rect width="1500" height="304" fill="url(#bg)"/>
+    <rect width="1500" height="304" fill="url(#grid)"/>
+    <ellipse cx="1220" cy="120" rx="420" ry="210" fill="url(#glow)"/>
+    <ellipse cx="180" cy="300" rx="380" ry="140" fill="url(#glow)" opacity=".6"/>
   </g>
-  <rect x=".5" y=".5" width="1199" height="407" rx="17.5" fill="none" stroke="var(--edge)" style="stroke-opacity:var(--edgeO)"/>
+  <rect x=".5" y=".5" width="1499" height="303" rx="17.5" fill="none" stroke="var(--edge)" style="stroke-opacity:var(--edgeO)"/>
 
   <!-- Etiqueta del frame + estado -->
   <g class="rise">
-    <path d="M 60 38 v 14 M 68 38 v 14 M 56 42 h 16 M 56 48 h 16" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
-    <text x="78" y="51" class="mono" font-size="15" fill="var(--accent)">jose2520</text>
-    <circle cx="182" cy="46" r="4.5" fill="var(--accent)"/>
-    <circle cx="182" cy="46" r="4.5" fill="none" stroke="var(--accent)" stroke-width="1.5" class="ring"/>
-    <text x="195" y="51" class="text" font-size="15" fill="var(--muted)">Disponible para proyectos</text>
+    <path d="M 60 28 v 14 M 68 28 v 14 M 56 32 h 16 M 56 38 h 16" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="78" y="41" class="mono" font-size="15" fill="var(--accent)">jose2520</text>
+    <circle cx="182" cy="36" r="4.5" fill="var(--accent)"/>
+    <circle cx="182" cy="36" r="4.5" fill="none" stroke="var(--accent)" stroke-width="1.5" class="ring"/>
+    <text x="195" y="41" class="text" font-size="15" fill="var(--muted)">Disponible para proyectos</text>
   </g>
 
   <!-- Nombre seleccionado -->
-  <text x="56" y="122" class="display rise" style="animation-delay:.08s" font-size="58" letter-spacing="-1" fill="var(--ink)">Jose Del Carmen Díaz</text>
+  <text x="56" y="108" class="display rise" style="animation-delay:.08s" font-size="56" letter-spacing="-1" fill="var(--ink)">Jose Del Carmen Díaz</text>
   <g class="fade" style="animation-delay:.3s">
-    <rect x="44" y="68" width="610.7" height="72" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
-    <rect x="40" y="64" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="650.7" y="64" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/>
-    <rect x="40" y="136" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="650.7" y="136" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/>
+    <rect x="44" y="56" width="589.8" height="68" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+    <rect x="40" y="52" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="629.8" y="52" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/>
+    <rect x="40" y="120" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="629.8" y="120" width="8" height="8" fill="var(--bg1)" stroke="var(--accent)" stroke-width="1.6"/>
   </g>
 
   <!-- Rol y propuesta -->
-  <text x="56" y="180" class="text rise" style="animation-delay:.16s" font-size="21" fill="var(--ink)">Desarrollador Full-Stack y Mobile · Diseñador UI/UX</text>
-  <text x="56" y="210" class="text rise" style="animation-delay:.24s" font-size="18" fill="var(--muted)">Barranquilla, Colombia. Del prototipo en Figma a producción.</text>
+  <text x="56" y="162" class="text rise" style="animation-delay:.16s" font-size="21" fill="var(--ink)">Desarrollador Full-Stack y Mobile · Diseñador UI/UX</text>
+  <text x="56" y="192" class="text rise" style="animation-delay:.24s" font-size="18" fill="var(--muted)">Barranquilla, Colombia. Del prototipo en Figma a producción.</text>
 
   <!-- Stack -->
     <g class="rise" style="animation-delay:0.45s">
-      <rect x="56" y="248" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
-      <text x="70" y="256" class="mono" font-size="14" fill="var(--muted)">web &amp; mobile</text>
+      <rect x="56" y="230" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
+      <text x="70" y="238" class="mono" font-size="14" fill="var(--muted)">web &amp; mobile</text>
     </g>
     <g class="rise" style="animation-delay:0.45s">
-      <rect x="56" y="268" width="67.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="89.8" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">React</text>
+      <rect x="56" y="250" width="72.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="92.3" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">React</text>
     </g>
     <g class="rise" style="animation-delay:0.49s">
-      <rect x="131.6" y="268" width="75.4" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="169.3" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Next.js</text>
+      <rect x="137.6" y="250" width="80.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="177.9" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Next.js</text>
     </g>
     <g class="rise" style="animation-delay:0.53s">
-      <rect x="215" y="268" width="115.5" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="272.8" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">React Native</text>
+      <rect x="227.2" y="250" width="122.1" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="288.3" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">React Native</text>
     </g>
     <g class="rise" style="animation-delay:0.57s">
-      <rect x="338.5" y="268" width="102.9" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="390" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">TypeScript</text>
+      <rect x="358.3" y="250" width="109.1" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="412.9" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">TypeScript</text>
     </g>
     <g class="rise" style="animation-delay:0.61s">
-      <rect x="469.4" y="248" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
-      <text x="483.4" y="256" class="mono" font-size="14" fill="var(--muted)">backend &amp; datos</text>
+      <rect x="505.4" y="230" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
+      <text x="519.4" y="238" class="mono" font-size="14" fill="var(--muted)">backend &amp; datos</text>
     </g>
     <g class="rise" style="animation-delay:0.61s">
-      <rect x="469.4" y="268" width="58.7" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="498.8" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">.NET</text>
+      <rect x="505.4" y="250" width="63.4" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="537.1" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">.NET</text>
     </g>
     <g class="rise" style="animation-delay:0.65s">
-      <rect x="536.1" y="268" width="79.4" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="575.8" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Node.js</text>
+      <rect x="577.8" y="250" width="84.7" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="620.2" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Node.js</text>
     </g>
     <g class="rise" style="animation-delay:0.69s">
-      <rect x="623.5" y="268" width="77.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="662.3" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Python</text>
+      <rect x="671.5" y="250" width="82.9" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="713" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Python</text>
     </g>
     <g class="rise" style="animation-delay:0.73s">
-      <rect x="709.1" y="268" width="55.1" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="736.7" y="290" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">SQL</text>
+      <rect x="763.4" y="250" width="59.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="793.2" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">SQL</text>
     </g>
     <g class="rise" style="animation-delay:0.77s">
-      <rect x="56" y="322" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
-      <text x="70" y="330" class="mono" font-size="14" fill="var(--muted)">diseño &amp; entorno</text>
+      <rect x="861" y="230" width="7" height="7" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.6"/>
+      <text x="875" y="238" class="mono" font-size="14" fill="var(--muted)">diseño &amp; entorno</text>
     </g>
     <g class="rise" style="animation-delay:0.77s">
-      <rect x="56" y="342" width="70.2" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="91.1" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Figma</text>
+      <rect x="861" y="250" width="75.2" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="898.6" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Figma</text>
     </g>
     <g class="rise" style="animation-delay:0.81s">
-      <rect x="134.2" y="342" width="103.2" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="185.8" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Photoshop</text>
+      <rect x="945.2" y="250" width="109.4" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="999.9" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Photoshop</text>
     </g>
     <g class="rise" style="animation-delay:0.85s">
-      <rect x="245.4" y="342" width="95.6" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="293.2" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Illustrator</text>
+      <rect x="1063.6" y="250" width="101.5" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="1114.4" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Illustrator</text>
     </g>
     <g class="rise" style="animation-delay:0.89s">
-      <rect x="349" y="342" width="77" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="387.5" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Docker</text>
+      <rect x="1174.1" y="250" width="82.3" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="1215.3" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Docker</text>
     </g>
     <g class="rise" style="animation-delay:0.93s">
-      <rect x="434" y="342" width="68" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="468" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Azure</text>
+      <rect x="1265.4" y="250" width="72.9" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="1301.9" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Azure</text>
     </g>
     <g class="rise" style="animation-delay:0.97s">
-      <rect x="510" y="342" width="89.4" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
-      <text x="554.7" y="364" text-anchor="middle" class="text" font-size="14.5" fill="var(--ink)">Postman</text>
+      <rect x="1347.3" y="250" width="95.2" height="34" rx="17" fill="var(--chipFill)" stroke="var(--chipStroke)" style="fill-opacity:var(--chipFillO);stroke-opacity:var(--chipStrokeO)"/>
+      <text x="1394.9" y="272" text-anchor="middle" class="text" font-size="15" fill="var(--ink)">Postman</text>
     </g>
 
   <!-- Ventana trasera: terminal jose.dev@full-stack:~$ -->
   <g class="fade" style="animation-delay:.12s">
-    <rect x="716" y="28" width="316" height="210" rx="14" fill="var(--board)" stroke="var(--accent)" stroke-width="1.3" style="stroke-opacity:var(--termStrokeO)"/>
-    <path d="M 716 64 H 1032" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeStrongO)"/>
-    <circle cx="734" cy="46" r="4" fill="var(--accent)" fill-opacity=".45"/>
-    <circle cx="747" cy="46" r="4" fill="var(--accent)" fill-opacity=".72"/>
-    <circle cx="760" cy="46" r="4" fill="var(--accent)"/>
-    <text x="774" y="50.5" class="mono" font-size="13">
+    <rect x="862" y="20" width="312" height="174" rx="13" fill="var(--board)" stroke="var(--accent)" stroke-width="1.3" style="stroke-opacity:var(--termStrokeO)"/>
+    <path d="M 862 52 H 1174" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeStrongO)"/>
+    <circle cx="878" cy="36" r="3.8" fill="var(--accent)" fill-opacity=".45"/>
+    <circle cx="890" cy="36" r="3.8" fill="var(--accent)" fill-opacity=".72"/>
+    <circle cx="902" cy="36" r="3.8" fill="var(--accent)"/>
+    <text x="916" y="40.5" class="mono" font-size="12.5">
       <tspan fill="var(--accent)">jose.dev@full-stack</tspan><tspan fill="var(--ink)">:</tspan><tspan fill="var(--accentSoft)">~</tspan><tspan fill="var(--ink)">$</tspan>
     </text>
-    <rect x="953.4" y="39" width="7.5" height="15" rx="1.5" fill="var(--accent)" class="blink"/>
-    <g class="mono" font-size="12" fill="var(--muted)">
-      <text x="734" y="90" fill="var(--ink)">$ npm run dev</text>
-      <text x="734" y="116"><tspan fill="var(--accent)">✓</tspan> web    ready</text>
-      <text x="734" y="140"><tspan fill="var(--accent)">✓</tspan> mobile ready</text>
-      <text x="734" y="164"><tspan fill="var(--accent)">✓</tspan> api    online</text>
-      <text x="734" y="188"><tspan fill="var(--accent)">✓</tspan> ui/ux  synced</text>
-      <text x="734" y="216" fill="var(--faint)">listening :3000</text>
+    <rect x="1088.5" y="29.5" width="7" height="14" rx="1.5" fill="var(--accent)" class="blink"/>
+    <g class="mono" font-size="11.5" fill="var(--muted)">
+      <text x="878" y="74" fill="var(--ink)">$ npm run dev</text>
+      <text x="878" y="96"><tspan fill="var(--accent)">✓</tspan> web    ready</text>
+      <text x="878" y="118"><tspan fill="var(--accent)">✓</tspan> mobile ready</text>
+      <text x="878" y="140"><tspan fill="var(--accent)">✓</tspan> api    online</text>
+      <text x="878" y="162"><tspan fill="var(--accent)">✓</tspan> ui/ux  synced</text>
+      <text x="878" y="182" fill="var(--faint)">listening :3000</text>
     </g>
   </g>
 
   <!-- Ventana delantera: mesa de trabajo portafolio.fig -->
   <g class="fade" style="animation-delay:.22s">
-    <rect x="856" y="86" width="292" height="290" rx="14" fill="var(--board)" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeStrongO)" filter="url(#winShadow)"/>
-    <path d="M 856 118 H 1148" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeO)"/>
-    <path d="M 874 97 h 10 v 10 h -10 z" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="892" y="107" class="mono" font-size="13" fill="var(--ink)">portafolio.fig</text>
-    <text x="1132" y="107" text-anchor="end" class="mono" font-size="11.5" fill="var(--faint)">fig · 100%</text>
-    <path d="M 856 282 H 1148" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeO)"/>
-    <rect x="874" y="295" width="10" height="10" rx="2" fill="var(--accent)"/>
-    <text x="890" y="304" class="mono" font-size="12" fill="var(--muted)">stroke · <tspan class="only-dark">#FF3349</tspan><tspan class="only-light">#8B5CF6</tspan> · 3px</text>
+    <rect x="1112" y="38" width="332" height="182" rx="13" fill="var(--board)" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeStrongO)" filter="url(#winShadow)"/>
+    <path d="M 1112 68 H 1444" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeO)"/>
+    <path d="M 1128 48 h 10 v 10 h -10 z" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="1144" y="58" class="mono" font-size="12.5" fill="var(--ink)">portafolio.fig</text>
+    <text x="1428" y="58" text-anchor="end" class="mono" font-size="11" fill="var(--faint)">fig · 100%</text>
+    <path d="M 1112 158 H 1444" stroke="var(--boardStroke)" style="stroke-opacity:var(--boardStrokeO)"/>
+    <rect x="1128" y="167" width="8" height="8" rx="2" fill="var(--accent)"/>
+    <text x="1142" y="175" class="mono" font-size="11" fill="var(--muted)">stroke · <tspan class="only-dark">#FF3349</tspan><tspan class="only-light">#8B5CF6</tspan> · 3px</text>
   </g>
-  <path d="M 886 234 C 912 136, 986 136, 998 188 S 1080 248, 1110 150" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" pathLength="1" class="draw"/>
+  <path d="M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80" fill="none" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" pathLength="1" class="draw"/>
   <g class="fade" style="animation-delay:2.2s">
-    <path d="M 986 136 L 1010 242" stroke="var(--muted)" stroke-width="1.2"/>
-    <circle cx="986" cy="136" r="3.6" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
-    <circle cx="1010" cy="242" r="3.6" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
-    <rect x="881.5" y="229.5" width="9" height="9" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="993.5" y="183.5" width="9" height="9" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1105.5" y="145.5" width="9" height="9" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/>
+    <path d="M 1252 68 L 1280 144" stroke="var(--muted)" stroke-width="1.2"/>
+    <circle cx="1252" cy="68" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
+    <circle cx="1280" cy="144" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
+    <rect x="1140" y="134" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1262" y="102" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1392" y="76" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/>
   </g>
-  <g class="mono" font-size="12.5" fill="var(--ink)">
+  <g class="mono" font-size="11.5" fill="var(--ink)">
     <g class="type-anim" clip-path="url(#type)">
-      <text x="874" y="332" fill="var(--muted)">&lt;path d=&quot;M24 114 C49 18 122 70…&quot;</text>
-      <text x="874" y="354" fill="var(--accentSoft)"><tspan class="only-dark">stroke=&quot;#FF3349&quot; fill=&quot;none&quot;/&gt;</tspan><tspan class="only-light">stroke=&quot;#8B5CF6&quot; fill=&quot;none&quot;/&gt;</tspan></text>
+      <text x="1128" y="195" fill="var(--muted)">&lt;path d=&quot;M24 114 C49 18 122 70…&quot;</text>
+      <text x="1128" y="211" fill="var(--accentSoft)"><tspan class="only-dark">stroke=&quot;#FF3349&quot; fill=&quot;none&quot;/&gt;</tspan><tspan class="only-light">stroke=&quot;#8B5CF6&quot; fill=&quot;none&quot;/&gt;</tspan></text>
     </g>
     <g class="type-static">
-      <text x="874" y="332" fill="var(--muted)">&lt;path d=&quot;M24 114 C49 18 122 70…&quot;</text>
-      <text x="874" y="354" fill="var(--accentSoft)"><tspan class="only-dark">stroke=&quot;#FF3349&quot; fill=&quot;none&quot;/&gt;</tspan><tspan class="only-light">stroke=&quot;#8B5CF6&quot; fill=&quot;none&quot;/&gt;</tspan></text>
+      <text x="1128" y="195" fill="var(--muted)">&lt;path d=&quot;M24 114 C49 18 122 70…&quot;</text>
+      <text x="1128" y="211" fill="var(--accentSoft)"><tspan class="only-dark">stroke=&quot;#FF3349&quot; fill=&quot;none&quot;/&gt;</tspan><tspan class="only-light">stroke=&quot;#8B5CF6&quot; fill=&quot;none&quot;/&gt;</tspan></text>
     </g>
   </g>
   
@@ -204,6 +204,6 @@
         <path d="M 0 0 L 17 -5.7 L 21.9 -14.9 L 14.9 -21.9 L 5.7 -17 Z" fill="var(--ink)" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/>
         <path d="M 0 0 L 7 -7" stroke="var(--bg1)" stroke-width="1.6" stroke-linecap="round"/>
         <circle cx="7.8" cy="-7.8" r="2" fill="var(--bg1)"/>
-        <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="M 886 234 C 912 136, 986 136, 998 188 S 1080 248, 1110 150"/>
+        <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80"/>
       </g>
 </svg>
