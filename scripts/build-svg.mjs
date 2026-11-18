@@ -197,7 +197,7 @@ function banner(variant, fonts) {
   // Ventana trasera (terminal) + ventana delantera (portafolio.fig)
   const T = { x: 862, y: 20, w: 312, h: 174 };
   const B = { x: 1112, y: 38, w: 332, h: 182 };
-  const curve = 'M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80';
+  const curve = 'M 1144 142 C 1172 76, 1252 76, 1266 112 S 1354 152, 1390 104';
   const codeLineDark = C.pathCode2(PALETTES.dark.accent);
   const codeLineLight = C.pathCode2(PALETTES.light.accent);
   const codeW = Math.max(measure('mono', C.pathCode1, 12), measure('mono', codeLineDark, 12));
@@ -306,10 +306,10 @@ ${canvas(W, H, `<ellipse cx="1220" cy="120" rx="420" ry="210" fill="url(#glow)"/
   </g>
   <path d="${curve}" fill="none" stroke="${V.accent}" stroke-width="2.8" stroke-linecap="round" pathLength="1" class="draw"/>
   <g class="fade" style="animation-delay:2.2s">
-    <path d="M 1252 68 L 1280 144" stroke="${V.muted}" stroke-width="1.2"/>
-    <circle cx="1252" cy="68" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
-    <circle cx="1280" cy="144" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
-    ${anchor(1144, 138, 8)} ${anchor(1266, 106, 8)} ${anchor(1396, 80, 8)}
+    <path d="M 1252 76 L 1280 148" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="1252" cy="76" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="1280" cy="148" r="3.4" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    ${anchor(1144, 142, 8)} ${anchor(1266, 112, 8)} ${anchor(1390, 104, 8)}
   </g>
   <g class="mono" font-size="11.5" fill="${V.ink}">
     <g class="type-anim" clip-path="url(#type)">
@@ -327,25 +327,27 @@ ${canvas(W, H, `<ellipse cx="1220" cy="120" rx="420" ry="210" fill="url(#glow)"/
 }
 
 // ---------------------------------------------------------------------------
-// Footer
+// Footer (panorámico: más ancho y más bajo, 1500x146)
 // ---------------------------------------------------------------------------
 function footer(variant, fonts) {
-  const W = 1200, H = 164, X = 56;
+  const W = 1500, H = 146, X = 56;
   const typedText = 'const build = ({ ui: "Figma", web: "React", api: ".NET" }) => deploy();';
   const typedW = r1(measure('mono', typedText, 13));
   const codeStartX = X + 18;
 
   const ticker = 'git commit -m "feat: algoritmo y diseño"   ·   npx expo start   ·   dotnet run --project Api';
+  const tickerUnit = `${ticker}   ·   `;
+  const tickerShift = r1(measure('mono', tickerUnit, 11.5));
 
-  const wave1 = 'M -10 112 C 160 88, 300 88, 420 108 S 660 130, 800 108 S 1040 86, 1210 104';
-  const wave2 = 'M -10 102 C 160 126, 300 126, 420 108 S 660 86, 800 108 S 1040 128, 1210 112';
+  const wave1 = 'M -10 102 C 200 80, 375 80, 525 98 S 825 118, 1000 98 S 1300 78, 1510 94';
+  const wave2 = 'M -10 92 C 200 116, 375 116, 525 98 S 825 78, 1000 98 S 1300 118, 1510 102';
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="title desc">
   <title id="title">${esc(C.motto)} ${esc(C.fullName)} (${C.handle})</title>
   <desc id="desc">Pie de página con el lema, código escribiéndose en vivo, fragmentos de código en movimiento, trazo Bézier animado y enlace al portafolio ${C.site}.</desc>
   <defs>${commonDefs(W, H)}
     <clipPath id="footerType">
-      <rect x="${codeStartX}" y="62" width="${typedW}" height="24">
+      <rect x="${codeStartX}" y="54" width="${typedW}" height="24">
         <animate attributeName="width" values="0;${typedW};${typedW};0;0" keyTimes="0;0.55;0.82;0.95;1" dur="7.5s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
@@ -362,12 +364,12 @@ ${fonts}
   <g clip-path="url(#clip)">
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
     <rect width="${W}" height="${H}" fill="url(#grid)"/>
-    <ellipse cx="600" cy="175" rx="540" ry="125" fill="url(#glow)"/>
+    <ellipse cx="750" cy="155" rx="680" ry="115" fill="url(#glow)"/>
 
     <!-- Línea de código inferior en movimiento -->
     <g class="mono" font-size="11.5" fill="${V.accentSoft}" style="opacity:${V.tickerO}">
-      <text x="-980" y="148">${esc(`${ticker}   ·   ${ticker}   ·   ${ticker}`)}</text>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="980 0" dur="22s" repeatCount="indefinite"/>
+      <text x="-${tickerShift}" y="132">${esc(`${tickerUnit}${tickerUnit}${tickerUnit}${ticker}`)}</text>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="${tickerShift} 0" dur="22s" repeatCount="indefinite"/>
     </g>
 
     <!-- Onda Bézier animada -->
@@ -375,38 +377,38 @@ ${fonts}
       <animate attributeName="d" values="${wave1};${wave2};${wave1}" dur="7s" repeatCount="indefinite"/>
     </path>
     <g>
-      <path d="M 300 88 L 540 128 M 660 130 L 940 86" stroke="${V.muted}" stroke-opacity=".65" stroke-width="1.1">
-        <animate attributeName="d" values="M 300 88 L 540 128 M 660 130 L 940 86;M 300 126 L 540 90 M 660 86 L 940 128;M 300 88 L 540 128 M 660 130 L 940 86" dur="7s" repeatCount="indefinite"/>
+      <path d="M 375 80 L 675 116 M 825 118 L 1175 78" stroke="${V.muted}" stroke-opacity=".65" stroke-width="1.1">
+        <animate attributeName="d" values="M 375 80 L 675 116 M 825 118 L 1175 78;M 375 116 L 675 80 M 825 78 L 1175 118;M 375 80 L 675 116 M 825 118 L 1175 78" dur="7s" repeatCount="indefinite"/>
       </path>
-      <circle cx="300" cy="88" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
-        <animate attributeName="cy" values="88;126;88" dur="7s" repeatCount="indefinite"/>
+      <circle cx="375" cy="80" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
+        <animate attributeName="cy" values="80;116;80" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="540" cy="128" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
-        <animate attributeName="cy" values="128;90;128" dur="7s" repeatCount="indefinite"/>
+      <circle cx="675" cy="116" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
+        <animate attributeName="cy" values="116;80;116" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="660" cy="130" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
-        <animate attributeName="cy" values="130;86;130" dur="7s" repeatCount="indefinite"/>
+      <circle cx="825" cy="118" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
+        <animate attributeName="cy" values="118;78;118" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="940" cy="86" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
-        <animate attributeName="cy" values="86;128;86" dur="7s" repeatCount="indefinite"/>
+      <circle cx="1175" cy="78" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
+        <animate attributeName="cy" values="78;118;78" dur="7s" repeatCount="indefinite"/>
       </circle>
-      ${anchor(420, 108, 9, V.bg1)} ${anchor(800, 108, 9, V.bg1)}
+      ${anchor(525, 98, 9, V.bg1)} ${anchor(1000, 98, 9, V.bg1)}
     </g>
   </g>
   <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${V.edge}" style="stroke-opacity:${V.edgeO}"/>
 
   <!-- Cabecera: lema y dominio -->
-  <text x="${X}" y="46" class="display" font-size="27" letter-spacing="-.4" fill="${V.ink}">${esc(C.motto)}</text>
-  <text x="${W - X}" y="46" text-anchor="end" class="mono" font-size="15" fill="${V.muted}">${C.site}</text>
+  <text x="${X}" y="42" class="display" font-size="26" letter-spacing="-.4" fill="${V.ink}">${esc(C.motto)}</text>
+  <text x="${W - X}" y="42" text-anchor="end" class="mono" font-size="15" fill="${V.muted}">${C.site}</text>
 
   <!-- Línea de código escribiéndose en vivo con cursor en movimiento -->
-  <text x="${X}" y="78" class="mono" font-size="13" fill="${V.accent}">&gt;</text>
+  <text x="${X}" y="70" class="mono" font-size="13" fill="${V.accent}">&gt;</text>
   <g clip-path="url(#footerType)" class="mono" font-size="13">
-    <text x="${codeStartX}" y="78" fill="${V.ink}">
+    <text x="${codeStartX}" y="70" fill="${V.ink}">
       <tspan fill="${V.accent}">const</tspan> build = ({ ui: <tspan fill="${V.accentSoft}">"Figma"</tspan>, web: <tspan fill="${V.accentSoft}">"React"</tspan>, api: <tspan fill="${V.accentSoft}">".NET"</tspan> }) <tspan fill="${V.accent}">=&gt;</tspan> deploy();
     </text>
   </g>
-  <rect x="${codeStartX + typedW + 3}" y="65" width="7.5" height="15" rx="1.5" fill="${V.accent}" class="blink">
+  <rect x="${codeStartX + typedW + 3}" y="57" width="7.5" height="15" rx="1.5" fill="${V.accent}" class="blink">
     <animate attributeName="x" values="${codeStartX};${r1(codeStartX + typedW + 3)};${r1(codeStartX + typedW + 3)};${codeStartX};${codeStartX}" keyTimes="0;0.55;0.82;0.95;1" dur="7.5s" repeatCount="indefinite"/>
   </rect>
 </svg>

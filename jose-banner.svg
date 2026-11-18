@@ -186,12 +186,12 @@
     <rect x="1128" y="167" width="8" height="8" rx="2" fill="var(--accent)"/>
     <text x="1142" y="175" class="mono" font-size="11" fill="var(--muted)">stroke · <tspan class="only-dark">#FF3349</tspan><tspan class="only-light">#8B5CF6</tspan> · 3px</text>
   </g>
-  <path d="M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80" fill="none" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" pathLength="1" class="draw"/>
+  <path d="M 1144 142 C 1172 76, 1252 76, 1266 112 S 1354 152, 1390 104" fill="none" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" pathLength="1" class="draw"/>
   <g class="fade" style="animation-delay:2.2s">
-    <path d="M 1252 68 L 1280 144" stroke="var(--muted)" stroke-width="1.2"/>
-    <circle cx="1252" cy="68" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
-    <circle cx="1280" cy="144" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
-    <rect x="1140" y="134" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1262" y="102" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1392" y="76" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/>
+    <path d="M 1252 76 L 1280 148" stroke="var(--muted)" stroke-width="1.2"/>
+    <circle cx="1252" cy="76" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
+    <circle cx="1280" cy="148" r="3.4" fill="var(--board)" stroke="var(--muted)" stroke-width="1.2"/>
+    <rect x="1140" y="138" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1262" y="108" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/> <rect x="1386" y="100" width="8" height="8" fill="var(--board)" stroke="var(--accent)" stroke-width="1.6"/>
   </g>
   <g class="mono" font-size="11.5" fill="var(--ink)">
     <g class="type-anim" clip-path="url(#type)">
@@ -209,6 +209,6 @@
         <path d="M 0 0 L 17 -5.7 L 21.9 -14.9 L 14.9 -21.9 L 5.7 -17 Z" fill="var(--ink)" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/>
         <path d="M 0 0 L 7 -7" stroke="var(--bg1)" stroke-width="1.6" stroke-linecap="round"/>
         <circle cx="7.8" cy="-7.8" r="2" fill="var(--bg1)"/>
-        <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="M 1144 138 C 1172 68, 1252 68, 1266 106 S 1358 150, 1396 80"/>
+        <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="M 1144 142 C 1172 76, 1252 76, 1266 112 S 1354 152, 1390 104"/>
       </g>
 </svg>
