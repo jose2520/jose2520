@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="286" height="28" viewBox="0 0 286 28" role="img" aria-label="PORTAFOLIO: JOSE2520.GITHUB.IO">
+  <title>PORTAFOLIO: JOSE2520.GITHUB.IO</title>
+  <defs>
+    <clipPath id="r"><rect width="286" height="28" rx="4"/></clipPath>
+    <style>:root{--b-lbg:#EDE5FC;--b-rbg:#FAF7FF;--b-ltxt:#171222;--b-rtxt:#7C3AED;--b-ico:#8B5CF6;--b-bdr:#D8CBF2;}</style>
+  </defs>
+  <g clip-path="url(#r)" shape-rendering="crispEdges">
+    <rect width="118" height="28" fill="var(--b-lbg)"/>
+    <rect x="118" width="168" height="28" fill="var(--b-rbg)"/>
+  </g>
+  <rect x=".5" y=".5" width="285" height="27" rx="3.5" fill="none" stroke="var(--b-bdr)"/>
+  <g transform="translate(10, 7) scale(0.5833)" fill="var(--b-ico)"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/></g>
+  <g text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="10">
+    <text x="71" y="17.5" fill="var(--b-ltxt)" letter-spacing="1">PORTAFOLIO</text>
+    <text x="202" y="17.5" fill="var(--b-rtxt)" font-weight="bold" letter-spacing="1">JOSE2520.GITHUB.IO</text>
+  </g>
+</svg>

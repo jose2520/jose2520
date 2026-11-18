@@ -1,6 +1,9 @@
 // Genera jose-banner(.light).svg y jose-footer(.light).svg en la raíz del repo.
-// Las fuentes se embeben como subconjunto WOFF2 en base64 para que el SVG
-// se vea idéntico en cualquier sistema (GitHub no carga fuentes externas en <img>).
+// - jose-banner.svg y jose-footer.svg cambian automáticamente entre modo oscuro
+//   (rojo carmesí) y modo claro (lila) según prefers-color-scheme del navegador.
+// - jose-banner-light.svg y jose-footer-light.svg fijan el tema claro (lila)
+//   para el selector <picture> de GitHub.
+// Las fuentes se embeben como subconjunto WOFF2 en base64.
 //
 //   cd scripts && npm install && npm run build
 
@@ -37,30 +40,41 @@ const C = {
 };
 
 // ---------------------------------------------------------------------------
-// Temas
+// Temas (oscuro en rojo carmesí · claro en lila)
 // ---------------------------------------------------------------------------
-const THEMES = {
+const PALETTES = {
   dark: {
-    suffix: '',
     bg1: '#0E080B', bg2: '#060609',
     dot: '#FFFFFF', dotO: 0.07,
     ink: '#F5F2F0', muted: '#A39FA8', faint: '#5C5762',
     accent: '#FF3349', accentSoft: '#FF8C98', glowO: 0.24,
     chipFill: '#FFFFFF', chipFillO: 0.045, chipStroke: '#FFFFFF', chipStrokeO: 0.14,
-    board: '#141117', boardStroke: '#FFFFFF', boardStrokeO: 0.12,
+    board: '#141117', boardStroke: '#FFFFFF', boardStrokeO: 0.12, boardStrokeStrongO: 0.16,
     edge: '#FFFFFF', edgeO: 0.08,
+    termStrokeO: 0.45, tickerO: 0.52, shadowO: 0.55,
   },
   light: {
-    suffix: '-light',
     bg1: '#FAF7FF', bg2: '#F2ECFD',
     dot: '#231934', dotO: 0.09,
     ink: '#171222', muted: '#5E546E', faint: '#A79EB8',
     accent: '#8B5CF6', accentSoft: '#7C3AED', glowO: 0.16,
     chipFill: '#FFFFFF', chipFillO: 0.85, chipStroke: '#171222', chipStrokeO: 0.14,
-    board: '#FFFFFF', boardStroke: '#171222', boardStrokeO: 0.12,
+    board: '#FFFFFF', boardStroke: '#171222', boardStrokeO: 0.12, boardStrokeStrongO: 0.17,
     edge: '#171222', edgeO: 0.10,
+    termStrokeO: 0.38, tickerO: 0.60, shadowO: 0.12,
   },
 };
+
+const VAR_KEYS = Object.keys(PALETTES.dark);
+const varsCss = (p) => VAR_KEYS.map((k) => `--${k}:${p[k]};`).join('');
+
+// Referencias a variables CSS para usar en atributos SVG
+const V = Object.fromEntries(VAR_KEYS.map((k) => [k, `var(--${k})`]));
+
+const VARIANTS = [
+  { suffix: '', adaptive: true, base: PALETTES.dark, light: PALETTES.light },
+  { suffix: '-light', adaptive: false, base: PALETTES.light, light: PALETTES.light },
+];
 
 // ---------------------------------------------------------------------------
 // Tipografía
@@ -75,7 +89,6 @@ for (const f of Object.values(FONTS)) f.kit = fontkit.openSync(f.file);
 const measure = (font, text, size, ls = 0) =>
   (FONTS[font].kit.layout(text).advanceWidth / FONTS[font].kit.unitsPerEm) * size + ls * text.length;
 
-// Caracteres extra para poder editar textos en español sin perder glifos.
 const EXTRA_CHARS = 'áéíóúÁÉÍÓÚñÑüÜ¿¡·—–…“”‘’×→✓';
 const ASCII = Array.from({ length: 95 }, (_, i) => String.fromCharCode(32 + i)).join('');
 
@@ -99,7 +112,17 @@ async function fontFaces(keys) {
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const r1 = (n) => Math.round(n * 10) / 10;
 
-const baseStyle = (t) => `
+const themeCss = (variant) => `
+      :root { ${varsCss(variant.base)} }
+      .only-light { display: ${variant.adaptive ? 'none' : 'inline'}; }
+      .only-dark  { display: ${variant.adaptive ? 'inline' : 'none'}; }${variant.adaptive ? `
+      @media (prefers-color-scheme: light) {
+        :root { ${varsCss(variant.light)} }
+        .only-dark  { display: none; }
+        .only-light { display: inline; }
+      }` : ''}`;
+
+const baseStyle = (variant) => `${themeCss(variant)}
       .display { font-family: 'JD Display', 'Segoe UI', system-ui, sans-serif; font-weight: 800; }
       .text    { font-family: 'JD Display', 'Segoe UI', system-ui, sans-serif; font-weight: 500; }
       .mono    { font-family: 'JD Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-weight: 500; }
@@ -115,36 +138,36 @@ const baseStyle = (t) => `
         .rise, .fade, .draw, .ring { animation: none; }
       }`;
 
-const canvas = (t, W, H, glow) => `
+const canvas = (W, H, glow) => `
   <g clip-path="url(#clip)">
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
     <rect width="${W}" height="${H}" fill="url(#grid)"/>
     ${glow}
   </g>
-  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${t.edge}" stroke-opacity="${t.edgeO}"/>`;
+  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${V.edge}" style="stroke-opacity:${V.edgeO}"/>`;
 
-const commonDefs = (t, W, H) => `
+const commonDefs = (W, H) => `
     <clipPath id="clip"><rect width="${W}" height="${H}" rx="18"/></clipPath>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${t.bg1}"/>
-      <stop offset="1" stop-color="${t.bg2}"/>
+      <stop offset="0" style="stop-color:${V.bg1}"/>
+      <stop offset="1" style="stop-color:${V.bg2}"/>
     </linearGradient>
     <radialGradient id="glow">
-      <stop offset="0" stop-color="${t.accent}" stop-opacity="${t.glowO}"/>
-      <stop offset="1" stop-color="${t.accent}" stop-opacity="0"/>
+      <stop offset="0" style="stop-color:${V.accent};stop-opacity:${V.glowO}"/>
+      <stop offset="1" style="stop-color:${V.accent};stop-opacity:0"/>
     </radialGradient>
     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="10" cy="10" r="1" fill="${t.dot}" fill-opacity="${t.dotO}"/>
+      <circle cx="10" cy="10" r="1" fill="${V.dot}" style="fill-opacity:${V.dotO}"/>
     </pattern>`;
 
 // Ancla cuadrada estilo herramienta de diseño
-const anchor = (t, x, y, s = 9, fill = t.board) =>
-  `<rect x="${r1(x - s / 2)}" y="${r1(y - s / 2)}" width="${s}" height="${s}" fill="${fill}" stroke="${t.accent}" stroke-width="1.6"/>`;
+const anchor = (x, y, s = 9, fill = V.board) =>
+  `<rect x="${r1(x - s / 2)}" y="${r1(y - s / 2)}" width="${s}" height="${s}" fill="${fill}" stroke="${V.accent}" stroke-width="1.6"/>`;
 
 // ---------------------------------------------------------------------------
 // Banner
 // ---------------------------------------------------------------------------
-function banner(t, fonts) {
+function banner(variant, fonts) {
   const W = 1200, H = 408, X = 56;
 
   // Nombre + caja de selección
@@ -181,27 +204,28 @@ function banner(t, fonts) {
   const T = { x: 716, y: 28, w: 316, h: 210 };
   const B = { x: 856, y: 86, w: 292, h: 290 };
   const curve = 'M 886 234 C 912 136, 986 136, 998 188 S 1080 248, 1110 150';
-  const codeLine2 = C.pathCode2(t.accent);
-  const codeW = Math.max(measure('mono', C.pathCode1, 12.5), measure('mono', codeLine2, 12.5));
+  const codeLineDark = C.pathCode2(PALETTES.dark.accent);
+  const codeLineLight = C.pathCode2(PALETTES.light.accent);
+  const codeW = Math.max(measure('mono', C.pathCode1, 12.5), measure('mono', codeLineDark, 12.5));
   const promptW = measure('mono', 'jose.dev@full-stack:~$ ', 13);
 
   const chipsSvg = groups.map((g) => `
     <g class="rise" style="animation-delay:${g.chips[0].d.toFixed(2)}s">
-      ${anchor(t, g.x + 3.5, g.labelY - 4.5, 7, t.accent)}
-      <text x="${g.x + 14}" y="${g.labelY}" class="mono" font-size="14" fill="${t.muted}">${esc(g.label)}</text>
+      ${anchor(g.x + 3.5, g.labelY - 4.5, 7, V.accent)}
+      <text x="${g.x + 14}" y="${g.labelY}" class="mono" font-size="14" fill="${V.muted}">${esc(g.label)}</text>
     </g>${g.chips.map((c) => `
     <g class="rise" style="animation-delay:${c.d.toFixed(2)}s">
-      <rect x="${c.x}" y="${g.chipY}" width="${c.w}" height="${chipH}" rx="${chipH / 2}" fill="${t.chipFill}" fill-opacity="${t.chipFillO}" stroke="${t.chipStroke}" stroke-opacity="${t.chipStrokeO}"/>
-      <text x="${r1(c.x + c.w / 2)}" y="${g.chipY + 22}" text-anchor="middle" class="text" font-size="${chipSize}" fill="${t.ink}">${esc(c.item)}</text>
+      <rect x="${c.x}" y="${g.chipY}" width="${c.w}" height="${chipH}" rx="${chipH / 2}" fill="${V.chipFill}" stroke="${V.chipStroke}" style="fill-opacity:${V.chipFillO};stroke-opacity:${V.chipStrokeO}"/>
+      <text x="${r1(c.x + c.w / 2)}" y="${g.chipY + 22}" text-anchor="middle" class="text" font-size="${chipSize}" fill="${V.ink}">${esc(c.item)}</text>
     </g>`).join('')}`).join('');
 
   // Plumilla (herramienta pluma), punta en el origen
   const nib = `
       <g>
-        <path d="M 14.9 -21.9 L 21.9 -14.9 L 36 -29 L 29 -36 Z" fill="${t.ink}"/>
-        <path d="M 0 0 L 17 -5.7 L 21.9 -14.9 L 14.9 -21.9 L 5.7 -17 Z" fill="${t.ink}" stroke="${t.accent}" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M 0 0 L 7 -7" stroke="${t.bg1}" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="7.8" cy="-7.8" r="2" fill="${t.bg1}"/>
+        <path d="M 14.9 -21.9 L 21.9 -14.9 L 36 -29 L 29 -36 Z" fill="${V.ink}"/>
+        <path d="M 0 0 L 17 -5.7 L 21.9 -14.9 L 14.9 -21.9 L 5.7 -17 Z" fill="${V.ink}" stroke="${V.accent}" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M 0 0 L 7 -7" stroke="${V.bg1}" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="7.8" cy="-7.8" r="2" fill="${V.bg1}"/>
         <animateMotion dur="2.2s" fill="freeze" keyPoints="0;0;1" keyTimes="0;.2727;1" calcMode="linear" path="${curve}"/>
       </g>`;
 
@@ -211,14 +235,14 @@ function banner(t, fonts) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="title desc">
   <title id="title">${esc(C.fullName)} (${C.handle}): ${esc(C.role)}</title>
   <desc id="desc">${esc(`Banner con el nombre seleccionado como en una herramienta de diseño, una pestaña de terminal (jose.dev@full-stack:~$) en segundo plano y la mesa de trabajo portafolio.fig delante donde una pluma dibuja una curva Bézier junto a su código. Stack: ${C.groups.map((g) => `${g.label}: ${g.items.join(', ')}`).join('; ')}.`)}</desc>
-  <defs>${commonDefs(t, W, H)}
+  <defs>${commonDefs(W, H)}
     <filter id="winShadow" x="-15%" y="-15%" width="130%" height="130%">
-      <feDropShadow dx="-6" dy="-4" stdDeviation="8" flood-color="#000000" flood-opacity="${t.suffix ? 0.12 : 0.55}"/>
+      <feDropShadow dx="-6" dy="-4" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
     <clipPath id="type"><rect x="${B.x + 18}" y="${inspectY + 32}" width="0" height="54">
       <animate attributeName="width" from="0" to="${r1(codeW + 8)}" begin="1.2s" dur="1.4s" fill="freeze"/>
     </rect></clipPath>
-    <style>${baseStyle(t)}
+    <style>${baseStyle(variant)}
       .blink { animation: blink 1.1s steps(1, end) infinite; }
       @keyframes blink { 50% { opacity: 0; } }
       .type-static { display: none; }
@@ -228,79 +252,79 @@ function banner(t, fonts) {
 ${fonts}
     </style>
   </defs>
-${canvas(t, W, H, `<ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow)"/>
+${canvas(W, H, `<ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow)"/>
     <ellipse cx="140" cy="390" rx="340" ry="160" fill="url(#glow)" opacity=".6"/>`)}
 
   <!-- Etiqueta del frame + estado -->
   <g class="rise">
-    <path d="M ${X + 4} 38 v 14 M ${X + 12} 38 v 14 M ${X} 42 h 16 M ${X} 48 h 16" stroke="${t.accent}" stroke-width="1.8" stroke-linecap="round"/>
-    <text x="${X + 22}" y="51" class="mono" font-size="15" fill="${t.accent}">${C.handle}</text>
-    <circle cx="${statusX}" cy="46" r="4.5" fill="${t.accent}"/>
-    <circle cx="${statusX}" cy="46" r="4.5" fill="none" stroke="${t.accent}" stroke-width="1.5" class="ring"/>
-    <text x="${statusX + 13}" y="51" class="text" font-size="15" fill="${t.muted}">${esc(C.status)}</text>
+    <path d="M ${X + 4} 38 v 14 M ${X + 12} 38 v 14 M ${X} 42 h 16 M ${X} 48 h 16" stroke="${V.accent}" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="${X + 22}" y="51" class="mono" font-size="15" fill="${V.accent}">${C.handle}</text>
+    <circle cx="${statusX}" cy="46" r="4.5" fill="${V.accent}"/>
+    <circle cx="${statusX}" cy="46" r="4.5" fill="none" stroke="${V.accent}" stroke-width="1.5" class="ring"/>
+    <text x="${statusX + 13}" y="51" class="text" font-size="15" fill="${V.muted}">${esc(C.status)}</text>
   </g>
 
   <!-- Nombre seleccionado -->
-  <text x="${X}" y="${nameY}" class="display rise" style="animation-delay:.08s" font-size="${nameSize}" letter-spacing="${nameLs}" fill="${t.ink}">${esc(C.name)}</text>
+  <text x="${X}" y="${nameY}" class="display rise" style="animation-delay:.08s" font-size="${nameSize}" letter-spacing="${nameLs}" fill="${V.ink}">${esc(C.name)}</text>
   <g class="fade" style="animation-delay:.3s">
-    <rect x="${sel.x}" y="${sel.y}" width="${sel.w}" height="${sel.h}" fill="none" stroke="${t.accent}" stroke-width="1.6"/>
-    ${anchor(t, sel.x, sel.y, 8, t.bg1)} ${anchor(t, sel.x + sel.w, sel.y, 8, t.bg1)}
-    ${anchor(t, sel.x, sel.y + sel.h, 8, t.bg1)} ${anchor(t, sel.x + sel.w, sel.y + sel.h, 8, t.bg1)}
+    <rect x="${sel.x}" y="${sel.y}" width="${sel.w}" height="${sel.h}" fill="none" stroke="${V.accent}" stroke-width="1.6"/>
+    ${anchor(sel.x, sel.y, 8, V.bg1)} ${anchor(sel.x + sel.w, sel.y, 8, V.bg1)}
+    ${anchor(sel.x, sel.y + sel.h, 8, V.bg1)} ${anchor(sel.x + sel.w, sel.y + sel.h, 8, V.bg1)}
   </g>
 
   <!-- Rol y propuesta -->
-  <text x="${X}" y="180" class="text rise" style="animation-delay:.16s" font-size="21" fill="${t.ink}">${esc(C.role)}</text>
-  <text x="${X}" y="210" class="text rise" style="animation-delay:.24s" font-size="18" fill="${t.muted}">${esc(C.pitch)}</text>
+  <text x="${X}" y="180" class="text rise" style="animation-delay:.16s" font-size="21" fill="${V.ink}">${esc(C.role)}</text>
+  <text x="${X}" y="210" class="text rise" style="animation-delay:.24s" font-size="18" fill="${V.muted}">${esc(C.pitch)}</text>
 
   <!-- Stack -->${chipsSvg}
 
   <!-- Ventana trasera: terminal jose.dev@full-stack:~$ -->
   <g class="fade" style="animation-delay:.12s">
-    <rect x="${T.x}" y="${T.y}" width="${T.w}" height="${T.h}" rx="14" fill="${t.board}" stroke="${t.accent}" stroke-opacity="${t.suffix ? 0.38 : 0.45}" stroke-width="1.3"/>
-    <path d="M ${T.x} ${T.y + 36} H ${T.x + T.w}" stroke="${t.boardStroke}" stroke-opacity="${t.boardStrokeO * 1.4}"/>
-    <circle cx="${T.x + 18}" cy="${T.y + 18}" r="4" fill="${t.accent}" fill-opacity=".45"/>
-    <circle cx="${T.x + 31}" cy="${T.y + 18}" r="4" fill="${t.accent}" fill-opacity=".72"/>
-    <circle cx="${T.x + 44}" cy="${T.y + 18}" r="4" fill="${t.accent}"/>
+    <rect x="${T.x}" y="${T.y}" width="${T.w}" height="${T.h}" rx="14" fill="${V.board}" stroke="${V.accent}" stroke-width="1.3" style="stroke-opacity:${V.termStrokeO}"/>
+    <path d="M ${T.x} ${T.y + 36} H ${T.x + T.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}"/>
+    <circle cx="${T.x + 18}" cy="${T.y + 18}" r="4" fill="${V.accent}" fill-opacity=".45"/>
+    <circle cx="${T.x + 31}" cy="${T.y + 18}" r="4" fill="${V.accent}" fill-opacity=".72"/>
+    <circle cx="${T.x + 44}" cy="${T.y + 18}" r="4" fill="${V.accent}"/>
     <text x="${T.x + 58}" y="${T.y + 22.5}" class="mono" font-size="13">
-      <tspan fill="${t.accent}">jose.dev@full-stack</tspan><tspan fill="${t.ink}">:</tspan><tspan fill="${t.accentSoft}">~</tspan><tspan fill="${t.ink}">$</tspan>
+      <tspan fill="${V.accent}">jose.dev@full-stack</tspan><tspan fill="${V.ink}">:</tspan><tspan fill="${V.accentSoft}">~</tspan><tspan fill="${V.ink}">$</tspan>
     </text>
-    <rect x="${r1(T.x + 58 + promptW)}" y="${T.y + 11}" width="7.5" height="15" rx="1.5" fill="${t.accent}" class="blink"/>
-    <g class="mono" font-size="12" fill="${t.muted}">
-      <text x="${T.x + 18}" y="${T.y + 62}" fill="${t.ink}">$ npm run dev</text>
-      <text x="${T.x + 18}" y="${T.y + 88}"><tspan fill="${t.accent}">✓</tspan> web    ready</text>
-      <text x="${T.x + 18}" y="${T.y + 112}"><tspan fill="${t.accent}">✓</tspan> mobile ready</text>
-      <text x="${T.x + 18}" y="${T.y + 136}"><tspan fill="${t.accent}">✓</tspan> api    online</text>
-      <text x="${T.x + 18}" y="${T.y + 160}"><tspan fill="${t.accent}">✓</tspan> ui/ux  synced</text>
-      <text x="${T.x + 18}" y="${T.y + 188}" fill="${t.faint}">listening :3000</text>
+    <rect x="${r1(T.x + 58 + promptW)}" y="${T.y + 11}" width="7.5" height="15" rx="1.5" fill="${V.accent}" class="blink"/>
+    <g class="mono" font-size="12" fill="${V.muted}">
+      <text x="${T.x + 18}" y="${T.y + 62}" fill="${V.ink}">$ npm run dev</text>
+      <text x="${T.x + 18}" y="${T.y + 88}"><tspan fill="${V.accent}">✓</tspan> web    ready</text>
+      <text x="${T.x + 18}" y="${T.y + 112}"><tspan fill="${V.accent}">✓</tspan> mobile ready</text>
+      <text x="${T.x + 18}" y="${T.y + 136}"><tspan fill="${V.accent}">✓</tspan> api    online</text>
+      <text x="${T.x + 18}" y="${T.y + 160}"><tspan fill="${V.accent}">✓</tspan> ui/ux  synced</text>
+      <text x="${T.x + 18}" y="${T.y + 188}" fill="${V.faint}">listening :3000</text>
     </g>
   </g>
 
   <!-- Ventana delantera: mesa de trabajo portafolio.fig -->
   <g class="fade" style="animation-delay:.22s">
-    <rect x="${B.x}" y="${B.y}" width="${B.w}" height="${B.h}" rx="14" fill="${t.board}" stroke="${t.boardStroke}" stroke-opacity="${t.boardStrokeO * 1.3}" filter="url(#winShadow)"/>
-    <path d="M ${B.x} ${headY} H ${B.x + B.w}" stroke="${t.boardStroke}" stroke-opacity="${t.boardStrokeO}"/>
-    <path d="M ${B.x + 18} ${B.y + 11} h 10 v 10 h -10 z" fill="none" stroke="${t.accent}" stroke-width="1.5"/>
-    <text x="${B.x + 36}" y="${B.y + 21}" class="mono" font-size="13" fill="${t.ink}">${C.artboard}</text>
-    <text x="${B.x + B.w - 16}" y="${B.y + 21}" text-anchor="end" class="mono" font-size="11.5" fill="${t.faint}">fig · 100%</text>
-    <path d="M ${B.x} ${inspectY} H ${B.x + B.w}" stroke="${t.boardStroke}" stroke-opacity="${t.boardStrokeO}"/>
-    <rect x="${B.x + 18}" y="${inspectY + 13}" width="10" height="10" rx="2" fill="${t.accent}"/>
-    <text x="${B.x + 34}" y="${inspectY + 22}" class="mono" font-size="12" fill="${t.muted}">stroke · ${t.accent} · 3px</text>
+    <rect x="${B.x}" y="${B.y}" width="${B.w}" height="${B.h}" rx="14" fill="${V.board}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeStrongO}" filter="url(#winShadow)"/>
+    <path d="M ${B.x} ${headY} H ${B.x + B.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeO}"/>
+    <path d="M ${B.x + 18} ${B.y + 11} h 10 v 10 h -10 z" fill="none" stroke="${V.accent}" stroke-width="1.5"/>
+    <text x="${B.x + 36}" y="${B.y + 21}" class="mono" font-size="13" fill="${V.ink}">${C.artboard}</text>
+    <text x="${B.x + B.w - 16}" y="${B.y + 21}" text-anchor="end" class="mono" font-size="11.5" fill="${V.faint}">fig · 100%</text>
+    <path d="M ${B.x} ${inspectY} H ${B.x + B.w}" stroke="${V.boardStroke}" style="stroke-opacity:${V.boardStrokeO}"/>
+    <rect x="${B.x + 18}" y="${inspectY + 13}" width="10" height="10" rx="2" fill="${V.accent}"/>
+    <text x="${B.x + 34}" y="${inspectY + 22}" class="mono" font-size="12" fill="${V.muted}">stroke · <tspan class="only-dark">${PALETTES.dark.accent}</tspan><tspan class="only-light">${PALETTES.light.accent}</tspan> · 3px</text>
   </g>
-  <path d="${curve}" fill="none" stroke="${t.accent}" stroke-width="3" stroke-linecap="round" pathLength="1" class="draw"/>
+  <path d="${curve}" fill="none" stroke="${V.accent}" stroke-width="3" stroke-linecap="round" pathLength="1" class="draw"/>
   <g class="fade" style="animation-delay:2.2s">
-    <path d="M 986 136 L 1010 242" stroke="${t.muted}" stroke-width="1.2"/>
-    <circle cx="986" cy="136" r="3.6" fill="${t.board}" stroke="${t.muted}" stroke-width="1.2"/>
-    <circle cx="1010" cy="242" r="3.6" fill="${t.board}" stroke="${t.muted}" stroke-width="1.2"/>
-    ${anchor(t, 886, 234)} ${anchor(t, 998, 188)} ${anchor(t, 1110, 150)}
+    <path d="M 986 136 L 1010 242" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="986" cy="136" r="3.6" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    <circle cx="1010" cy="242" r="3.6" fill="${V.board}" stroke="${V.muted}" stroke-width="1.2"/>
+    ${anchor(886, 234)} ${anchor(998, 188)} ${anchor(1110, 150)}
   </g>
-  <g class="mono" font-size="12.5" fill="${t.ink}">
+  <g class="mono" font-size="12.5" fill="${V.ink}">
     <g class="type-anim" clip-path="url(#type)">
-      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${t.muted}">${esc(C.pathCode1)}</text>
-      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${t.accentSoft}">${esc(codeLine2)}</text>
+      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${V.muted}">${esc(C.pathCode1)}</text>
+      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
     </g>
     <g class="type-static">
-      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${t.muted}">${esc(C.pathCode1)}</text>
-      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${t.accentSoft}">${esc(codeLine2)}</text>
+      <text x="${B.x + 18}" y="${inspectY + 50}" fill="${V.muted}">${esc(C.pathCode1)}</text>
+      <text x="${B.x + 18}" y="${inspectY + 72}" fill="${V.accentSoft}"><tspan class="only-dark">${esc(codeLineDark)}</tspan><tspan class="only-light">${esc(codeLineLight)}</tspan></text>
     </g>
   </g>
   ${nib}
@@ -311,7 +335,7 @@ ${canvas(t, W, H, `<ellipse cx="1000" cy="150" rx="360" ry="250" fill="url(#glow
 // ---------------------------------------------------------------------------
 // Footer
 // ---------------------------------------------------------------------------
-function footer(t, fonts) {
+function footer(variant, fonts) {
   const W = 1200, H = 164, X = 56;
   const typedText = 'const build = ({ ui: "Figma", web: "React", api: ".NET" }) => deploy();';
   const typedW = r1(measure('mono', typedText, 13));
@@ -325,13 +349,13 @@ function footer(t, fonts) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="title desc">
   <title id="title">${esc(C.motto)} ${esc(C.fullName)} (${C.handle})</title>
   <desc id="desc">Pie de página con el lema, código escribiéndose en vivo, fragmentos de código en movimiento, trazo Bézier animado y enlace al portafolio ${C.site}.</desc>
-  <defs>${commonDefs(t, W, H)}
+  <defs>${commonDefs(W, H)}
     <clipPath id="footerType">
       <rect x="${codeStartX}" y="62" width="${typedW}" height="24">
         <animate attributeName="width" values="0;${typedW};${typedW};0;0" keyTimes="0;0.55;0.82;0.95;1" dur="7.5s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <style>
+    <style>${themeCss(variant)}
       .display { font-family: 'JD Display', 'Segoe UI', system-ui, sans-serif; font-weight: 800; }
       .mono    { font-family: 'JD Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-weight: 500; }
       .blink   { animation: blink 0.9s steps(1, end) infinite; }
@@ -347,48 +371,48 @@ ${fonts}
     <ellipse cx="600" cy="175" rx="540" ry="125" fill="url(#glow)"/>
 
     <!-- Línea de código inferior en movimiento -->
-    <g class="mono" font-size="11.5" fill="${t.accentSoft}" opacity="${t.suffix ? 0.6 : 0.52}">
+    <g class="mono" font-size="11.5" fill="${V.accentSoft}" style="opacity:${V.tickerO}">
       <text x="-980" y="148">${esc(`${ticker}   ·   ${ticker}   ·   ${ticker}`)}</text>
       <animateTransform attributeName="transform" type="translate" from="0 0" to="980 0" dur="22s" repeatCount="indefinite"/>
     </g>
 
     <!-- Onda Bézier animada -->
-    <path d="${wave1}" fill="none" stroke="${t.accent}" stroke-width="2.4" stroke-linecap="round">
+    <path d="${wave1}" fill="none" stroke="${V.accent}" stroke-width="2.4" stroke-linecap="round">
       <animate attributeName="d" values="${wave1};${wave2};${wave1}" dur="7s" repeatCount="indefinite"/>
     </path>
     <g>
-      <path d="M 300 88 L 540 128 M 660 130 L 940 86" stroke="${t.muted}" stroke-opacity=".65" stroke-width="1.1">
+      <path d="M 300 88 L 540 128 M 660 130 L 940 86" stroke="${V.muted}" stroke-opacity=".65" stroke-width="1.1">
         <animate attributeName="d" values="M 300 88 L 540 128 M 660 130 L 940 86;M 300 126 L 540 90 M 660 86 L 940 128;M 300 88 L 540 128 M 660 130 L 940 86" dur="7s" repeatCount="indefinite"/>
       </path>
-      <circle cx="300" cy="88" r="3.4" fill="${t.bg1}" stroke="${t.muted}" stroke-width="1.1">
+      <circle cx="300" cy="88" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
         <animate attributeName="cy" values="88;126;88" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="540" cy="128" r="3.4" fill="${t.bg1}" stroke="${t.muted}" stroke-width="1.1">
+      <circle cx="540" cy="128" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
         <animate attributeName="cy" values="128;90;128" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="660" cy="130" r="3.4" fill="${t.bg1}" stroke="${t.muted}" stroke-width="1.1">
+      <circle cx="660" cy="130" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
         <animate attributeName="cy" values="130;86;130" dur="7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="940" cy="86" r="3.4" fill="${t.bg1}" stroke="${t.muted}" stroke-width="1.1">
+      <circle cx="940" cy="86" r="3.4" fill="${V.bg1}" stroke="${V.muted}" stroke-width="1.1">
         <animate attributeName="cy" values="86;128;86" dur="7s" repeatCount="indefinite"/>
       </circle>
-      ${anchor(t, 420, 108, 9, t.bg1)} ${anchor(t, 800, 108, 9, t.bg1)}
+      ${anchor(420, 108, 9, V.bg1)} ${anchor(800, 108, 9, V.bg1)}
     </g>
   </g>
-  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${t.edge}" stroke-opacity="${t.edgeO}"/>
+  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${V.edge}" style="stroke-opacity:${V.edgeO}"/>
 
   <!-- Cabecera: lema y dominio -->
-  <text x="${X}" y="46" class="display" font-size="27" letter-spacing="-.4" fill="${t.ink}">${esc(C.motto)}</text>
-  <text x="${W - X}" y="46" text-anchor="end" class="mono" font-size="15" fill="${t.muted}">${C.site}</text>
+  <text x="${X}" y="46" class="display" font-size="27" letter-spacing="-.4" fill="${V.ink}">${esc(C.motto)}</text>
+  <text x="${W - X}" y="46" text-anchor="end" class="mono" font-size="15" fill="${V.muted}">${C.site}</text>
 
   <!-- Línea de código escribiéndose en vivo con cursor en movimiento -->
-  <text x="${X}" y="78" class="mono" font-size="13" fill="${t.accent}">&gt;</text>
+  <text x="${X}" y="78" class="mono" font-size="13" fill="${V.accent}">&gt;</text>
   <g clip-path="url(#footerType)" class="mono" font-size="13">
-    <text x="${codeStartX}" y="78" fill="${t.ink}">
-      <tspan fill="${t.accent}">const</tspan> build = ({ ui: <tspan fill="${t.accentSoft}">"Figma"</tspan>, web: <tspan fill="${t.accentSoft}">"React"</tspan>, api: <tspan fill="${t.accentSoft}">".NET"</tspan> }) <tspan fill="${t.accent}">=&gt;</tspan> deploy();
+    <text x="${codeStartX}" y="78" fill="${V.ink}">
+      <tspan fill="${V.accent}">const</tspan> build = ({ ui: <tspan fill="${V.accentSoft}">"Figma"</tspan>, web: <tspan fill="${V.accentSoft}">"React"</tspan>, api: <tspan fill="${V.accentSoft}">".NET"</tspan> }) <tspan fill="${V.accent}">=&gt;</tspan> deploy();
     </text>
   </g>
-  <rect x="${codeStartX + typedW + 3}" y="65" width="7.5" height="15" rx="1.5" fill="${t.accent}" class="blink">
+  <rect x="${codeStartX + typedW + 3}" y="65" width="7.5" height="15" rx="1.5" fill="${V.accent}" class="blink">
     <animate attributeName="x" values="${codeStartX};${r1(codeStartX + typedW + 3)};${r1(codeStartX + typedW + 3)};${codeStartX};${codeStartX}" keyTimes="0;0.55;0.82;0.95;1" dur="7.5s" repeatCount="indefinite"/>
   </rect>
 </svg>
@@ -396,15 +420,125 @@ ${fonts}
 }
 
 // ---------------------------------------------------------------------------
+// Badges de contacto (adaptativos Dark Carmesí <-> Light Lila)
+// ---------------------------------------------------------------------------
+const ICONS = {
+  chrome: '<path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>',
+  linkedin: '<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>',
+  mail: '<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>',
+};
+
+function makeBadge(cfg, adaptive) {
+  const { label, value, w1, w2, icon, dark, light } = cfg;
+  const W = w1 + w2, H = 28;
+  const cssVars = (p) => `--b-lbg:${p.lbg};--b-rbg:${p.rbg};--b-ltxt:${p.ltxt};--b-rtxt:${p.rtxt};--b-ico:${p.ico};--b-bdr:${p.bdr};`;
+  const style = adaptive
+    ? `:root{${cssVars(dark)}}@media (prefers-color-scheme: light){:root{${cssVars(light)}}}`
+    : `:root{${cssVars(light)}}`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}: ${value}">
+  <title>${label}: ${value}</title>
+  <defs>
+    <clipPath id="r"><rect width="${W}" height="${H}" rx="4"/></clipPath>
+    <style>${style}</style>
+  </defs>
+  <g clip-path="url(#r)" shape-rendering="crispEdges">
+    <rect width="${w1}" height="${H}" fill="var(--b-lbg)"/>
+    <rect x="${w1}" width="${w2}" height="${H}" fill="var(--b-rbg)"/>
+  </g>
+  <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="3.5" fill="none" stroke="var(--b-bdr)"/>
+  <g transform="translate(10, 7) scale(0.5833)" fill="var(--b-ico)">${ICONS[icon]}</g>
+  <g text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="10">
+    <text x="${r1(12 + w1 / 2)}" y="17.5" fill="var(--b-ltxt)" letter-spacing="1">${label}</text>
+    <text x="${r1(w1 + w2 / 2)}" y="17.5" fill="var(--b-rtxt)" font-weight="bold" letter-spacing="1">${value}</text>
+  </g>
+</svg>
+`;
+}
+
+const BADGE_SPECS = [
+  {
+    name: 'badge-portfolio', label: 'PORTAFOLIO', value: 'JOSE2520.GITHUB.IO', w1: 118, w2: 168, icon: 'chrome',
+    dark:  { lbg: '#141117', rbg: '#0E080B', ltxt: '#F5F2F0', rtxt: '#FFFFFF', ico: '#FF3349', bdr: '#2A2228' },
+    light: { lbg: '#EDE5FC', rbg: '#FAF7FF', ltxt: '#171222', rtxt: '#7C3AED', ico: '#8B5CF6', bdr: '#D8CBF2' },
+  },
+  {
+    name: 'badge-linkedin', label: 'LINKEDIN', value: 'JOSE-DE-CARMEN-D', w1: 104, w2: 158, icon: 'linkedin',
+    dark:  { lbg: '#0E080B', rbg: '#FF3349', ltxt: '#F5F2F0', rtxt: '#FFFFFF', ico: '#FF3349', bdr: '#FF3349' },
+    light: { lbg: '#EDE5FC', rbg: '#8B5CF6', ltxt: '#171222', rtxt: '#FFFFFF', ico: '#8B5CF6', bdr: '#8B5CF6' },
+  },
+  {
+    name: 'badge-email', label: 'CORREO', value: 'ESCRÍBEME', w1: 92, w2: 104, icon: 'mail',
+    dark:  { lbg: '#0E080B', rbg: '#F5F2F0', ltxt: '#F5F2F0', rtxt: '#0E080B', ico: '#FF3349', bdr: '#2A2228' },
+    light: { lbg: '#EDE5FC', rbg: '#7C3AED', ltxt: '#171222', rtxt: '#FFFFFF', ico: '#8B5CF6', bdr: '#7C3AED' },
+  },
+];
+
+// ---------------------------------------------------------------------------
 const OUTPUTS = [
   ['jose-banner', banner, ['display', 'text', 'mono']],
   ['jose-footer', footer, ['display', 'mono']],
 ];
-for (const t of Object.values(THEMES)) {
+for (const variant of VARIANTS) {
   for (const [name, fn, keys] of OUTPUTS) {
-    const file = path.join(root, `${name}${t.suffix}.svg`);
-    const svg = fn(t, await fontFaces(keys));
+    const file = path.join(root, `${name}${variant.suffix}.svg`);
+    const svg = fn(variant, await fontFaces(keys));
     fs.writeFileSync(file, svg);
     console.log(`✓ ${path.relative(root, file)}  ${(Buffer.byteLength(svg) / 1024).toFixed(1)} KB`);
+  }
+}
+
+const cardsDir = path.join(root, 'profile-summary-card-output');
+fs.mkdirSync(cardsDir, { recursive: true });
+for (const b of BADGE_SPECS) {
+  for (const [suffix, adaptive] of [['', true], ['-light', false]]) {
+    const file = path.join(cardsDir, `${b.name}${suffix}.svg`);
+    fs.writeFileSync(file, makeBadge(b, adaptive));
+    console.log(`✓ ${path.relative(root, file)}`);
+  }
+}
+
+// Hacer adaptativo streak-stats y las tarjetas de commits si existen
+function makeStreakAdaptive(rawSvg, adaptive) {
+  const clean = rawSvg.replace(/:root\{[^}]+\}(@media\s*\(prefers-color-scheme:\s*light\)\{:root\{[^}]+\}\})?\s*/g, '');
+  const darkVars = '--s-bg:#0E080B;--s-stroke:#2A2228;--s-ink:#F5F2F0;--s-muted:#A39FA8;--s-accent:#FF3349;';
+  const lightVars = '--s-bg:#FAF7FF;--s-stroke:#E4DAF6;--s-ink:#171222;--s-muted:#5E546E;--s-accent:#8B5CF6;';
+  const rule = adaptive
+    ? `:root{${darkVars}}@media (prefers-color-scheme: light){:root{${lightVars}}}`
+    : `:root{${lightVars}}`;
+  return clean
+    .replace(/#0e080b/gi, 'var(--s-bg)')
+    .replace(/#2a2228/gi, 'var(--s-stroke)')
+    .replace(/#f5f2f0/gi, 'var(--s-ink)')
+    .replace(/#a39fa8/gi, 'var(--s-muted)')
+    .replace(/#ff3349/gi, 'var(--s-accent)')
+    .replace('<style>', `<style>${rule}\n`);
+}
+
+const streakSrc = fs.existsSync('/tmp/streak.svg')
+  ? fs.readFileSync('/tmp/streak.svg', 'utf8')
+  : (fs.existsSync(path.join(cardsDir, 'streak-stats.svg')) ? fs.readFileSync(path.join(cardsDir, 'streak-stats.svg'), 'utf8') : null);
+if (streakSrc) {
+  fs.writeFileSync(path.join(cardsDir, 'streak-stats.svg'), makeStreakAdaptive(streakSrc, true));
+  fs.writeFileSync(path.join(cardsDir, 'streak-stats-light.svg'), makeStreakAdaptive(streakSrc, false));
+  console.log('✓ profile-summary-card-output/streak-stats(.light).svg');
+}
+
+for (const card of ['2-most-commit-language.svg', '4-productive-time.svg']) {
+  const darkFile = path.join(cardsDir, 'github_dark', card);
+  const lightFile = path.join(cardsDir, 'default', card);
+  if (fs.existsSync(darkFile)) {
+    const raw = fs.readFileSync(darkFile, 'utf8').replace(/:root\{[^}]+\}(@media\s*\(prefers-color-scheme:\s*light\)\{:root\{[^}]+\}\})?/g, '');
+    const dVars = '--c-bg:#0E080B;--c-bdr:#2A2228;--c-title:#FF3349;--c-txt:#F5F2F0;--c-bar:#FF3349;';
+    const lVars = '--c-bg:#FAF7FF;--c-bdr:#E4DAF6;--c-title:#7C3AED;--c-txt:#171222;--c-bar:#8B5CF6;';
+    const adapt = (s, isAdapt) => s
+      .replace(/#0d1117|var\(--c-bg\)/gi, 'var(--c-bg)')
+      .replace(/#2e343b|var\(--c-bdr\)/gi, 'var(--c-bdr)')
+      .replace(/#0366d6|var\(--c-title\)/gi, 'var(--c-title)')
+      .replace(/#77909c|var\(--c-txt\)/gi, 'var(--c-txt)')
+      .replace(/#40c463|var\(--c-bar\)/gi, 'var(--c-bar)')
+      .replace('<style>', `<style>:root{${isAdapt ? dVars : lVars}}${isAdapt ? `@media (prefers-color-scheme: light){:root{${lVars}}}` : ''}`);
+    fs.writeFileSync(darkFile, adapt(raw, true));
+    fs.writeFileSync(lightFile, adapt(raw, false));
+    console.log(`✓ adaptive ${card}`);
   }
 }
