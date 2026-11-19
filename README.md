@@ -32,11 +32,13 @@
 
 ## Sobre mí
 
-Construyo productos web y móviles donde la arquitectura técnica y el diseño visual trabajan juntos. Vengo de la ilustración y el diseño gráfico, y hoy llevo esa mirada al código: del boceto en Figma a la app en producción.
+¡Hola! Soy **Jose Del Carmen Díaz Díaz**, Tecnólogo en Análisis y Desarrollo de Software del **SENA** y actualmente fortalezco mi perfil como desarrollador Full-Stack en **RIWI**. Me apasiona crear soluciones tecnológicas —aplicaciones web y móviles— integrando **Frontend, Backend y diseño UX/UI**, sumando mi base en ilustración y diseño gráfico para llevar cada idea desde el prototipo en Figma hasta producción.
 
-- **Formación:** Tecnólogo en Análisis y Desarrollo de Software (**SENA**, grado 2026), formación Full-Stack en **RIWI** (en curso) y certificado profesional **Google UX Design**. Cursos de análisis de datos (**MinTIC** y **BeTek**) y Scrum (**SENA**). Base artística e ilustración (**EDA**) y diseño gráfico (**SENA**).
-- **Enfoque:** web y mobile con `React`, `Next.js`, `React Native` y `TypeScript`; APIs REST con `.NET`, `Node.js`, `Python` y `Laravel`; datos con `PostgreSQL`, `MySQL`, `MongoDB` y `Pandas`; despliegue con `Docker` y `Azure`.
-- **Idiomas:** español (nativo) e inglés (A2).
+Me caracterizo por el aprendizaje continuo, la resolución de problemas y la adaptación a nuevos retos. Busco una oportunidad donde aportar mis conocimientos y seguir creciendo en el sector tecnológico.
+
+- **Formación:** Tecnólogo en Análisis y Desarrollo de Software (**SENA**, grado 2026), desarrollo Full-Stack en **RIWI** (en curso) y certificado profesional **Google UX Design**. Cursos de análisis de datos (**MinTIC** y **BeTek**), Scrum (**SENA**), ilustración artística (**EDA**) y diseño gráfico (**SENA**).
+- **Enfoque:** web y mobile con `React`, `Next.js`, `React Native` y `TypeScript`; backend y APIs REST con `C# .NET`, `Node.js`, `Python` y `Laravel`; datos con `PostgreSQL`, `MySQL`, `MongoDB` y `Pandas`; diseño con `Figma` y despliegue con `Docker` y `Azure`.
+- **Disponibilidad e idiomas:** abierto a oportunidades **presenciales, híbridas y remotas** (Barranquilla, Colombia) · Español (nativo) e inglés (A2).
 
 ## Experiencia destacada
 
