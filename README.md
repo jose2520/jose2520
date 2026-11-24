@@ -54,14 +54,56 @@ Desarrollé el ecosistema digital de la institución, desde el prototipado en Fi
 
 ## Proyectos destacados
 
-| Proyecto | Qué resuelve | Stack |
-| :-- | :-- | :-- |
-| **Firmeza** <br /><sub>[API](https://github.com/jose2520/Firmeza-jd) · [Web](https://github.com/jose2520/Firmeza_frontn) · [Mobile](https://github.com/jose2520/Firmeza_frontend)</sub> | Ecosistema comercial, logística de despachos y alquiler de maquinaria pesada con facturación PDF, JWT y 112 tests | `C# .NET 10` · `PostgreSQL` · `React` · `React Native` · `Expo` · `TypeScript` · `Tailwind` |
-| **SkillHub** <br /><sub>[API](https://github.com/jose2520/SkillHub_back) · [Web](https://github.com/jose2520/SkillHub_front)</sub> | Gestión de talleres e inscripciones con cupos en tiempo real, calendario interactivo, certificados PDF, importación Excel y 88 tests | `C# .NET 10` · `PostgreSQL` · `Docker` · `React` · `Tailwind` |
-| [**Riwi Connect**](https://github.com/MeliRodriguezB/Riwi_Connect) | Conformación inteligente de equipos de trabajo mediante evaluación técnica, perfilamiento con IA y recomendación por habilidades complementarias | `Python` · `Flask` · `PostgreSQL` · `JavaScript` · `Vite` · `Tailwind` · `Docker` · `Gemini API` |
-| [**Comercializadora El Roble**](https://github.com/jose2520/Comercializadora-Agr-cola-El-Roble) | Gestión de báscula, pagos a productores agrícolas, conversión TRM (API Datos Abiertos Colombia) y reportes gerenciales | `C# .NET 10` · `LINQ` · `Clean Architecture` · `REST API` |
-| [**Cooperativa El Progreso**](https://github.com/jose2520/CF-el-progreso) | Sistema transaccional de taquilla bancaria en N-Capas con control de depósitos, retiros, auditoría, TRM y reportes | `C# .NET 10` · `LINQ` · `N-Tier Architecture` |
-| [**Lucho Díaz Shop**](https://github.com/jose2520/tiendalucho) | E-commerce modular con carrito persistente, filtros dinámicos, animaciones Canvas, accesibilidad WCAG 2.1 y checkout por WhatsApp | `JavaScript` · `HTML5` · `CSS3` · `Canvas` |
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <b>Firmeza</b> · <sub><a href="https://github.com/jose2520/Firmeza-jd">API</a> · <a href="https://github.com/jose2520/Firmeza_frontn">Web</a> · <a href="https://github.com/jose2520/Firmeza_frontend">Mobile</a></sub>
+      <br />
+      <sub>Ecosistema comercial, logística de despachos a obra y alquiler de maquinaria pesada con Clean Architecture, facturación PDF, JWT y 112 tests.</sub>
+      <br /><br />
+      <sub><code>C# .NET 10</code> · <code>PostgreSQL</code> · <code>React</code> · <code>React Native</code> · <code>Expo</code> · <code>TypeScript</code></sub>
+    </td>
+    <td width="50%" valign="top">
+      <b>SkillHub</b> · <sub><a href="https://github.com/jose2520/SkillHub_back">API</a> · <a href="https://github.com/jose2520/SkillHub_front">Web</a></sub>
+      <br />
+      <sub>Plataforma de talleres e inscripciones con cupos en tiempo real, calendario interactivo, certificados PDF con marca de agua, importación Excel y 88 tests.</sub>
+      <br /><br />
+      <sub><code>C# .NET 10</code> · <code>PostgreSQL</code> · <code>Docker</code> · <code>React</code> · <code>Tailwind CSS</code></sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/MeliRodriguezB/Riwi_Connect">Riwi Connect</a></b> · <sub>Full-Stack &amp; IA</sub>
+      <br />
+      <sub>Conformación inteligente de equipos de trabajo mediante evaluación técnica, perfilamiento profesional con IA y recomendación por habilidades complementarias.</sub>
+      <br /><br />
+      <sub><code>Python</code> · <code>Flask</code> · <code>PostgreSQL</code> · <code>JavaScript</code> · <code>Vite</code> · <code>Docker</code> · <code>Gemini API</code></sub>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/jose2520/Comercializadora-Agr-cola-El-Roble">Comercializadora El Roble</a></b> · <sub>Backend</sub>
+      <br />
+      <sub>Sistema de recepción en báscula, liquidación a productores agrícolas, conversión TRM en vivo (API Datos Abiertos Colombia) y 6 reportes gerenciales.</sub>
+      <br /><br />
+      <sub><code>C# .NET 10</code> · <code>LINQ</code> · <code>Clean Architecture</code> · <code>REST API</code></sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/jose2520/CF-el-progreso">Cooperativa El Progreso</a></b> · <sub>Backend</sub>
+      <br />
+      <sub>Sistema transaccional de taquilla bancaria en arquitectura N-Capas con gestión de asociados, depósitos/retiros auditados, consulta TRM y reportes.</sub>
+      <br /><br />
+      <sub><code>C# .NET 10</code> · <code>LINQ</code> · <code>N-Tier Architecture</code></sub>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/jose2520/tiendalucho">Lucho Díaz Shop</a></b> · <sub>Frontend</sub>
+      <br />
+      <sub>E-commerce modular con carrito persistente, filtros dinámicos en tiempo real, animaciones Canvas, accesibilidad WCAG 2.1 y checkout vía WhatsApp.</sub>
+      <br /><br />
+      <sub><code>JavaScript</code> · <code>HTML5</code> · <code>CSS3</code> · <code>Canvas</code></sub>
+    </td>
+  </tr>
+</table>
 
 ## Stack tecnológico
 
