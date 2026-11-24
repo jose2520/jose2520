@@ -52,6 +52,17 @@ Desarrollé el ecosistema digital de la institución, desde el prototipado en Fi
 | App móvil administrativa | Gestión académica y operativa del colegio | `React Native` · `Expo` |
 | Diseño de producto | Prototipos y UI de ambas soluciones | `Figma` |
 
+## Proyectos destacados
+
+| Proyecto | Qué resuelve | Stack |
+| :-- | :-- | :-- |
+| **Firmeza** <br /><sub>[API](https://github.com/jose2520/Firmeza-jd) · [Web](https://github.com/jose2520/Firmeza_frontn) · [Mobile](https://github.com/jose2520/Firmeza_frontend)</sub> | Ecosistema comercial, logística de despachos y alquiler de maquinaria pesada con facturación PDF, JWT y 112 tests | `C# .NET 10` · `PostgreSQL` · `React` · `React Native` · `Expo` · `TypeScript` · `Tailwind` |
+| **SkillHub** <br /><sub>[API](https://github.com/jose2520/SkillHub_back) · [Web](https://github.com/jose2520/SkillHub_front)</sub> | Gestión de talleres e inscripciones con cupos en tiempo real, calendario interactivo, certificados PDF, importación Excel y 88 tests | `C# .NET 10` · `PostgreSQL` · `Docker` · `React` · `Tailwind` |
+| [**Riwi Connect**](https://github.com/MeliRodriguezB/Riwi_Connect) | Conformación inteligente de equipos de trabajo mediante evaluación técnica, perfilamiento con IA y recomendación por habilidades complementarias | `Python` · `Flask` · `PostgreSQL` · `JavaScript` · `Vite` · `Tailwind` · `Docker` · `Gemini API` |
+| [**Comercializadora El Roble**](https://github.com/jose2520/Comercializadora-Agr-cola-El-Roble) | Gestión de báscula, pagos a productores agrícolas, conversión TRM (API Datos Abiertos Colombia) y reportes gerenciales | `C# .NET 10` · `LINQ` · `Clean Architecture` · `REST API` |
+| [**Cooperativa El Progreso**](https://github.com/jose2520/CF-el-progreso) | Sistema transaccional de taquilla bancaria en N-Capas con control de depósitos, retiros, auditoría, TRM y reportes | `C# .NET 10` · `LINQ` · `N-Tier Architecture` |
+| [**Lucho Díaz Shop**](https://github.com/jose2520/tiendalucho) | E-commerce modular con carrito persistente, filtros dinámicos, animaciones Canvas, accesibilidad WCAG 2.1 y checkout por WhatsApp | `JavaScript` · `HTML5` · `CSS3` · `Canvas` |
+
 ## Stack tecnológico
 
 #### Frontend y mobile
